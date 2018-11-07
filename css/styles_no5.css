@@ -1,0 +1,484 @@
+html {
+  cursor: none; }
+
+body.no5 {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #010119;
+  text-align: center;
+  cursor: none;
+  text-shadow: 0 0 25px;
+  color: #FFFFFF;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 1.5px;
+  overflow: visible; }
+  body.no5 h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 45px; }
+  body.no5 .layout {
+    padding-top: 5%; }
+  body.no5 .final-text {
+    opacity: 0;
+    transform: translateY(100%);
+    width: 100%;
+    font-size: 20px;
+    text-shadow: 0 0 25px; }
+
+.wrapper-no5 {
+  width: 60%;
+  margin: 20px auto;
+  cursor: none;
+  display: block;
+  color: white;
+  overflow: visible;
+  /*planet styles*/ }
+  .wrapper-no5 svg {
+    overflow: visible; }
+  .wrapper-no5 .title {
+    animation: startani 0.3s linear 0.2s backwards;
+    margin-bottom: 7%; }
+  .wrapper-no5 .planet__header,
+  .wrapper-no5 .animal__header {
+    animation: startani 0.3s linear 0.4s backwards;
+    margin-bottom: 2%;
+    font-size: 25px; }
+  .wrapper-no5 .planet__text,
+  .wrapper-no5 .animal__text {
+    animation: startani 0.3s linear 0.4s backwards;
+    margin-bottom: 7%;
+    font-size: 16px; }
+  .wrapper-no5 .planet,
+  .wrapper-no5 .animal {
+    animation: startani 0.3s linear 0.6s backwards;
+    margin-bottom: 15%; }
+  .wrapper-no5 .button {
+    display: none; }
+    .wrapper-no5 .button.visible {
+      display: block;
+      animation: startani 0.3s linear 0.8s backwards; }
+      .wrapper-no5 .button.visible button {
+        background-color: #010119;
+        color: #FFFFFF;
+        padding: 20px 50px;
+        border-radius: 5%;
+        border: 2px solid #FFFFFF;
+        cursor: none;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 0.8rem;
+        box-shadow: 0 0 25px; }
+        .wrapper-no5 .button.visible button:focus, .wrapper-no5 .button.visible button:active {
+          box-shadow: none;
+          outline: none; }
+        .wrapper-no5 .button.visible button:hover {
+          font-size: 1rem; }
+  .wrapper-no5 .form-wrapper {
+    width: 100%;
+    overflow: visible; }
+    .wrapper-no5 .form-wrapper input[type="radio"] {
+      opacity: 0;
+      width: 0;
+      height: 0;
+      display: none; }
+    .wrapper-no5 .form-wrapper input[type="radio"]:active ~ .planet__label {
+      opacity: 1; }
+    .wrapper-no5 .form-wrapper input[type="radio"]:checked ~ .planet__label {
+      opacity: 1; }
+    .wrapper-no5 .form-wrapper input[type="radio"]:checked ~ .planet__label .ischecked,
+    .wrapper-no5 .form-wrapper input[type="radio"]:checked ~ .animal__label .ischecked {
+      opacity: 1;
+      transition: opacity 0.2s linear 0.5s; }
+    .wrapper-no5 .form-wrapper input[type="radio"]:checked ~ .planet__label .explosion {
+      display: block;
+      animation: explose 0.2s linear 0.3s; }
+    .wrapper-no5 .form-wrapper input[type="radio"]:checked ~ .planet__label .dust {
+      display: block;
+      animation: explosedust 0.4s linear 0.2s; }
+    .wrapper-no5 .form-wrapper input[type="radio"]:checked ~ .planet__label .saturn-group,
+    .wrapper-no5 .form-wrapper input[type="radio"]:checked ~ .planet__label .earth-group,
+    .wrapper-no5 .form-wrapper input[type="radio"]:checked ~ .planet__label .mars-group {
+      animation: planetexplose 0.2s linear 0.3s forwards; }
+    .wrapper-no5 .form-wrapper input[type="radio"]:checked ~ .animal__label .cow,
+    .wrapper-no5 .form-wrapper input[type="radio"]:checked ~ .animal__label .snail,
+    .wrapper-no5 .form-wrapper input[type="radio"]:checked ~ .animal__label .unicorn {
+      animation: animal 0.5s linear forwards; }
+    .wrapper-no5 .form-wrapper input[type="radio"]:checked ~ .planet__label .planet__svg:hover, .wrapper-no5 .form-wrapper input[type="radio"]:checked ~ .planet__label .planet__svg:focus, .wrapper-no5 .form-wrapper input[type="radio"]:checked ~ .planet__label .planet__svg:active {
+      animation: none; }
+  .wrapper-no5 .ufowrapper {
+    width: 130px;
+    margin-top: -35px;
+    position: absolute; }
+    .wrapper-no5 .ufowrapper .light.shoot,
+    .wrapper-no5 .ufowrapper .light.shoot2 {
+      width: 0px;
+      height: 0px;
+      background-color: yellow;
+      top: 35px;
+      right: 100px;
+      border-radius: 50%;
+      position: absolute; }
+    .wrapper-no5 .ufowrapper .light.shoot {
+      animation: shootstart 0.3s linear 0s forwards; }
+    .wrapper-no5 .ufowrapper .light.shoot2 {
+      animation: shootstart2 0.3s linear 0s forwards; }
+    .wrapper-no5 .ufowrapper.cursoralienarm .light.shoot,
+    .wrapper-no5 .ufowrapper.cursoralienarm .light.shoot2 {
+      opacity: 0; }
+    .wrapper-no5 .ufowrapper.cursoralienarm .ufoalien .arm {
+      display: block;
+      opacity: 1;
+      transition: all 0.3s linear; }
+  .wrapper-no5 .ufoalien {
+    width: 100%; }
+  .wrapper-no5 .ufostroke,
+  .wrapper-no5 .ufocar,
+  .wrapper-no5 .eye_white_circle,
+  .wrapper-no5 .arm {
+    fill: white; }
+  .wrapper-no5 .ufoglim,
+  .wrapper-no5 .arm,
+  .wrapper-no5 .ufocar,
+  .wrapper-no5 .buddycow {
+    fill: #FFFFFF;
+    stroke: #FFFFFF;
+    stroke-width: 1px;
+    stroke-linecap: round;
+    stroke-miterlimit: 10; }
+  .wrapper-no5 .arm {
+    display: none;
+    opacity: 0;
+    stroke-width: 2px; }
+  .wrapper-no5 .alienbody {
+    fill: #00B8BC; }
+  .wrapper-no5 .ufoline {
+    fill: #FFFFFF;
+    stroke: #FFFFFF; }
+  .wrapper-no5 .beamer {
+    transition: all 0.3s linear;
+    fill: #FF0;
+    opacity: 0; }
+  .wrapper-no5 .buddycow {
+    fill: none; }
+  .wrapper-no5 .buddycow,
+  .wrapper-no5 .buddyunicorn,
+  .wrapper-no5 .buddysnail {
+    opacity: 0;
+    transform: translateX(13px);
+    stroke-width: 2px; }
+  .wrapper-no5 .buddycow.visible,
+  .wrapper-no5 .buddyunicorn.visible,
+  .wrapper-no5 .buddysnail.visible {
+    opacity: 1; }
+  .wrapper-no5 .planet,
+  .wrapper-no5 .animal {
+    width: 100%;
+    min-height: 70%;
+    border: none;
+    padding: 0;
+    overflow: visible;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1000; }
+    .wrapper-no5 .planet path,
+    .wrapper-no5 .planet circle,
+    .wrapper-no5 .animal path,
+    .wrapper-no5 .animal circle {
+      fill: none;
+      stroke: #FFFFFF;
+      stroke-linecap: round;
+      stroke-miterlimit: 10;
+      stroke-width: 1px; }
+    .wrapper-no5 .planet polygon,
+    .wrapper-no5 .animal polygon {
+      fill: #FFFFFF; }
+    .wrapper-no5 .planet .dust path,
+    .wrapper-no5 .animal .dust path {
+      fill: #FFFFFF;
+      stroke: none; }
+    .wrapper-no5 .planet .ischecked,
+    .wrapper-no5 .animal .ischecked {
+      opacity: 0;
+      transform: translateY(-10px); }
+      .wrapper-no5 .planet .ischecked circle,
+      .wrapper-no5 .animal .ischecked circle {
+        fill: none;
+        stroke: #FFFFFF;
+        stroke-miterlimit: 10; }
+      .wrapper-no5 .planet .ischecked polyline,
+      .wrapper-no5 .animal .ischecked polyline {
+        fill: none;
+        stroke: #FFFFFF;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 1px; }
+      .wrapper-no5 .planet .ischecked text,
+      .wrapper-no5 .animal .ischecked text {
+        font-size: 8px;
+        text-anchor: middle;
+        color: #FFFFFF;
+        fill: #FFFFFF; }
+    .wrapper-no5 .planet .animal__label .ischecked,
+    .wrapper-no5 .animal .animal__label .ischecked {
+      transform: translateY(0); }
+    .wrapper-no5 .planet .planet--saturn .ischecked,
+    .wrapper-no5 .animal .planet--saturn .ischecked {
+      transform: translateY(-13px); }
+    .wrapper-no5 .planet__answer,
+    .wrapper-no5 .animal__answer {
+      display: block;
+      max-height: 117px;
+      width: 150px;
+      vertical-align: top;
+      font-size: 22px;
+      text-align: center;
+      overflow: visible; }
+      .wrapper-no5 .planet__answer label,
+      .wrapper-no5 .animal__answer label {
+        width: 180px;
+        cursor: none; }
+        .wrapper-no5 .planet__answer label:hover, .wrapper-no5 .planet__answer label:focus, .wrapper-no5 .planet__answer label:active,
+        .wrapper-no5 .animal__answer label:hover,
+        .wrapper-no5 .animal__answer label:focus,
+        .wrapper-no5 .animal__answer label:active {
+          cursor: none; }
+    .wrapper-no5 .planet .planet--saturn,
+    .wrapper-no5 .animal .planet--saturn {
+      width: 200px;
+      overflow: visible;
+      transform: rotate(-10deg);
+      animation-play-state: paused; }
+      .wrapper-no5 .planet .planet--saturn:hover, .wrapper-no5 .planet .planet--saturn:focus, .wrapper-no5 .planet .planet--saturn:active,
+      .wrapper-no5 .animal .planet--saturn:hover,
+      .wrapper-no5 .animal .planet--saturn:focus,
+      .wrapper-no5 .animal .planet--saturn:active {
+        animation: turn 1s ease-in-out 0s forwards infinite; }
+    .wrapper-no5 .planet .planet--earth,
+    .wrapper-no5 .animal .planet--earth {
+      width: 110px;
+      overflow: visible;
+      transform: rotate(0deg);
+      animation-play-state: paused; }
+      .wrapper-no5 .planet .planet--earth:hover,
+      .wrapper-no5 .animal .planet--earth:hover {
+        animation: turnaround 1s ease-in-out 0s forwards infinite; }
+    .wrapper-no5 .planet .planet--mars,
+    .wrapper-no5 .animal .planet--mars {
+      width: 110px;
+      overflow: visible;
+      transform: rotate(0deg);
+      animation-play-state: paused; }
+      .wrapper-no5 .planet .planet--mars:hover,
+      .wrapper-no5 .animal .planet--mars:hover {
+        animation: turnaround 1s ease-in-out 0s forwards infinite; }
+    .wrapper-no5 .planet .explosion,
+    .wrapper-no5 .planet .dust,
+    .wrapper-no5 .animal .explosion,
+    .wrapper-no5 .animal .dust {
+      display: none;
+      opacity: 0;
+      transform-origin: center;
+      transform: scale(0); }
+  .wrapper-no5 .beamerisvisible .beamer {
+    transition: all 0.3s linear;
+    opacity: 0.3; }
+  .wrapper-no5 .animal__answer {
+    z-index: 10000;
+    position: relative; }
+  .wrapper-no5 .animal,
+  .wrapper-no5 .animal__header,
+  .wrapper-no5 .animal__text {
+    display: none; }
+  .wrapper-no5.planetIsHidden .planet {
+    animation: endaniform 0.5s linear 0.5s forwards; }
+  .wrapper-no5.planetIsHidden .planet__header,
+  .wrapper-no5.planetIsHidden .planet__text {
+    animation: endaniform 0.5s linear 0.5s forwards; }
+  .wrapper-no5.animalIsVisible .planet,
+  .wrapper-no5.animalIsVisible .planet__header,
+  .wrapper-no5.animalIsVisible .planet__text {
+    display: none; }
+  .wrapper-no5.animalIsVisible .animal {
+    display: flex; }
+  .wrapper-no5.animalIsVisible .animal__header,
+  .wrapper-no5.animalIsVisible .animal__text {
+    display: block; }
+  .wrapper-no5.animalIsVisible .ufowrapper {
+    margin-top: -115px;
+    margin-left: -125px; }
+  .wrapper-no5.animalIsVisible .animal__answer label:hover, .wrapper-no5.animalIsVisible .animal__answer label:focus, .wrapper-no5.animalIsVisible .animal__answer label:active {
+    cursor: none; }
+  .wrapper-no5.animalIsVisible .light {
+    display: none; }
+  .wrapper-no5.animalIsVisible .button {
+    z-index: 100;
+    position: relative; }
+  .wrapper-no5.sendit {
+    animation: endani 1s linear 0.5s forwards;
+    cursor: auto; }
+    .wrapper-no5.sendit .ufowrapper {
+      opacity: 0;
+      transition: all 1s linear 0.3s; }
+    .wrapper-no5.sendit + .final-text {
+      opacity: 1;
+      position: absolute;
+      top: 49%;
+      transform: translateY(0);
+      transition: all 0.5s linear 0.5s; }
+  .wrapper-no5 .button button.btnclicked {
+    box-shadow: 0 0 25px;
+    animation: endanibtn 0.2s linear forwards 0.2s; }
+
+@keyframes shootstart {
+  0% {
+    width: 0;
+    height: 0; }
+  55% {
+    width: 1px;
+    height: 1px; }
+  75% {
+    width: 90px;
+    height: 1px;
+    right: 128px; }
+  100% {
+    width: 0px;
+    height: 0px;
+    right: 200px; } }
+
+@keyframes shootstart2 {
+  0% {
+    width: 0;
+    height: 0; }
+  55% {
+    width: 1px;
+    height: 1px; }
+  75% {
+    width: 90px;
+    height: 1px;
+    right: 128px; }
+  100% {
+    width: 0px;
+    height: 0px;
+    right: 200px; } }
+
+@keyframes turn {
+  0% {
+    transform: rotate(-10deg); }
+  50% {
+    transform: rotate(10deg); }
+  100% {
+    transform: rotate(-10deg); } }
+
+@keyframes turnaround {
+  0% {
+    transform: rotate(0deg); }
+  50% {
+    transform: rotate(20deg); }
+  100% {
+    transform: rotate(0deg); } }
+
+@keyframes planetexplose {
+  0% {
+    transform-origin: center;
+    transform: scale(1); }
+  100% {
+    transform-origin: center;
+    transform: scale(0); } }
+
+@keyframes explose {
+  0% {
+    transform-origin: center;
+    transform: scale(0);
+    opacity: 1; }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    transform-origin: center;
+    transform: scale(5); } }
+
+@keyframes explosedust {
+  0% {
+    transform-origin: center;
+    transform: scale(0);
+    opacity: 0.8; }
+  100% {
+    opacity: 0;
+    transform-origin: center;
+    transform: scale(2); } }
+
+@keyframes explosedustcolor {
+  0% {
+    fill: #FFFFFF; }
+  100% {
+    fill: #000000; } }
+
+@-webkit-keyframes startani {
+  0% {
+    opacity: 0;
+    transform: translateY(100%); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+@-webkit-keyframes endani {
+  0% {
+    opacity: 1;
+    width: 60%;
+    transform: scale(1) translateY(0); }
+  90% {
+    opacity: 0; }
+  100% {
+    opacity: 0;
+    width: 0;
+    transform: scale(0) translateY(-300%); } }
+
+@-webkit-keyframes endaniform {
+  0% {
+    opacity: 1;
+    transform: translateY(0); }
+  100% {
+    opacity: 0;
+    transform: translateY(-100%); } }
+
+@-webkit-keyframes endanibtn {
+  0% {
+    opacity: 1;
+    transform: scale(1); }
+  50% {
+    opacity: 1;
+    transform: scale(0.5); }
+  100% {
+    opacity: 1;
+    transform: scale(1); } }
+
+@-webkit-keyframes animal {
+  0% {
+    opacity: 1;
+    transform: scale(1, 1) translate(0, 0);
+    transform-origin: center; }
+  50% {
+    opacity: 1; }
+  90% {
+    transform: scale(0.5, 0.5) translate(0, -100%);
+    transform-origin: center;
+    opacity: 0; }
+  100% {
+    opacity: 0;
+    transform: scale(0.5, 0.5) translate(0, -100%);
+    transform-origin: center; } }
+
+@media screen and (max-width: 1000px) {
+  .wrapper-no5 {
+    width: 90%; }
+  .layout {
+    padding-top: 10%; } }
+
+@media screen and (max-width: 500px) {
+  .planet,
+  .animal {
+    align-items: center;
+    flex-direction: column; }
+    .planet .planet__answer:first-child,
+    .animal .planet__answer:first-child {
+      margin-left: -15%; } }

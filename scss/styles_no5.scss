@@ -1,0 +1,658 @@
+$no5color: #010119;
+$no5colorwhite: #FFFFFF;
+$no5colorblack: #000000;
+$no5coloraliengreen: #00B8BC;
+$no5coloryellow: #FF0;
+
+html{
+	cursor: none;
+}
+body.no5{
+	margin: 0;
+	padding: 0;
+	overflow-x:hidden;
+	background-color: $no5color;
+	text-align: center;
+	cursor: none;  
+	text-shadow: 0 0 25px;
+	color: $no5colorwhite;
+	font-family: 'Orbitron', sans-serif;
+	letter-spacing: 1.5px;
+	overflow: visible;
+	h1{
+		margin: 0;
+		padding: 0;
+		font-size: 45px;
+	}
+
+	.layout{
+		padding-top: 5%;
+	}
+	.final-text{
+		opacity: 0;
+		transform: translateY(100%);
+		width: 100%;
+		font-size: 20px;
+		text-shadow: 0 0 25px;
+	}
+}
+.wrapper-no5 {
+	width: 60%;
+	margin: 20px auto;
+	cursor: none;  
+	display: block;
+	color: white;
+	overflow: visible;
+
+	svg{
+		overflow: visible;
+	}
+
+	.title{
+		animation: startani 0.3s linear 0.2s backwards;
+		margin-bottom: 7%;
+	}
+
+	.planet__header,
+	.animal__header{
+		animation: startani 0.3s linear 0.4s backwards;
+		margin-bottom: 2%;
+		font-size: 25px;
+	}
+
+	.planet__text,
+	.animal__text{
+		animation: startani 0.3s linear 0.4s backwards;
+		margin-bottom: 7%;
+		font-size: 16px;
+	}
+
+	.planet,
+	.animal{
+		animation: startani 0.3s linear 0.6s backwards;
+		margin-bottom: 15%;
+	}
+
+	.button{
+		display: none;
+		&.visible{
+			display: block;
+			animation: startani 0.3s linear 0.8s backwards;
+
+		button{
+		    background-color: $no5color;
+    		color: $no5colorwhite;
+    		padding: 20px 50px;
+    		border-radius: 5%;
+    		border: 2px solid $no5colorwhite;
+    		cursor: none;
+    		font-family: 'Orbitron', sans-serif;
+    		font-size: 0.8rem;
+    		box-shadow: 0 0 25px;
+    		&:focus,
+    		&:active{
+    			box-shadow: none;
+    			outline: none;
+    		}
+
+    		&:hover{
+    			font-size: 1rem;
+    		}
+		}
+	 }
+	}
+
+	.form-wrapper{
+	    width: 100%;
+	    overflow: visible;
+	    input[type="radio"] {
+			opacity: 0;
+			width: 0;
+		  	height: 0;
+		  	display:none;
+		}
+
+		input[type="radio"]:active ~ .planet__label {
+		  opacity: 1;
+		}
+
+		input[type="radio"]:checked ~ .planet__label {
+		  opacity: 1;
+		}
+
+		input[type="radio"]:checked ~ .planet__label .ischecked,
+		input[type="radio"]:checked ~ .animal__label .ischecked{
+		  opacity: 1;
+		  transition: opacity 0.2s linear 0.5s;
+		}
+
+		input[type="radio"]:checked ~ .planet__label .explosion {
+		  display: block;
+		  animation: explose 0.2s linear 0.3s;
+		}
+
+		input[type="radio"]:checked ~ .planet__label .dust {
+		  display: block;
+		  animation: explosedust 0.4s linear 0.2s;
+		}
+
+		input[type="radio"]:checked ~ .planet__label .saturn-group,
+		input[type="radio"]:checked ~ .planet__label .earth-group,
+		input[type="radio"]:checked ~ .planet__label .mars-group {
+		  animation: planetexplose 0.2s linear 0.3s forwards;
+		}
+
+		input[type="radio"]:checked ~ .animal__label .cow,
+		input[type="radio"]:checked ~ .animal__label .snail,
+		input[type="radio"]:checked ~ .animal__label .unicorn {
+		  animation: animal 0.5s linear forwards;
+		}
+
+		input[type="radio"]:checked ~ .planet__label .planet__svg {
+		  &:hover, &:focus, &:active{
+				animation: none;
+			}
+		}
+	}
+ 
+	.ufowrapper{
+		width: 130px;
+		margin-top: -35px;
+		position: absolute;
+			.light.shoot,
+			.light.shoot2{
+				width: 0px;
+			    height: 0px;
+			    background-color: yellow;
+			    top: 35px;
+			    right: 100px; 
+			    border-radius: 50%;
+			    position: absolute;
+			}
+			.light.shoot{
+				animation: shootstart 0.3s linear 0s forwards;
+			}
+			.light.shoot2{
+				animation: shootstart2 0.3s linear 0s forwards;
+			}
+
+			&.cursoralienarm{
+				.light.shoot,
+				.light.shoot2{
+					opacity: 0;
+				}
+
+				.ufoalien .arm{
+					display: block;
+					opacity: 1;
+					transition: all 0.3s linear;
+				}
+			}
+	}
+
+	.ufoalien{
+		width: 100%;
+	}
+	.ufostroke,
+	.ufocar,
+	.eye_white_circle,
+	.arm {
+		fill: white;
+	}
+	.ufoglim,
+	.arm,
+	.ufocar,
+	.buddycow{
+		fill: $no5colorwhite;
+		stroke: $no5colorwhite;
+		stroke-width: 1px; 
+		stroke-linecap:round;
+		stroke-miterlimit:10;
+	}
+	.arm{
+		display: none;
+		opacity: 0;
+		stroke-width: 2px; 
+	}
+	.alienbody {
+		fill: $no5coloraliengreen;
+	}
+	.ufoline{
+		fill: $no5colorwhite;
+		stroke: $no5colorwhite;
+	}
+	.beamer{
+		transition: all 0.3s linear;
+		fill: $no5coloryellow;
+		opacity: 0;
+	}
+	.buddycow{
+		fill: none;
+		
+	}
+	.buddycow,
+	.buddyunicorn,
+	.buddysnail{
+		opacity: 0;
+		transform: translateX(13px);
+		stroke-width: 2px; 
+	}
+	.buddycow.visible,
+	.buddyunicorn.visible,
+	.buddysnail.visible{
+		opacity: 1;
+	}
+
+	/*planet styles*/
+	.planet,
+	.animal{
+		width: 100%;
+		min-height: 70%;
+		border: none;
+		padding: 0;
+		overflow: visible;
+		display: flex;
+		justify-content: space-between;
+		z-index: 1000;
+
+		path,
+		circle{
+			fill: none;
+			stroke: $no5colorwhite;
+			stroke-linecap: round;
+			stroke-miterlimit: 10;
+			stroke-width: 1px;
+		}
+
+		polygon{
+			fill: $no5colorwhite;
+		}
+
+		.dust path{
+			fill: $no5colorwhite;
+			stroke: none;
+		}
+
+		.ischecked{
+				opacity: 0;
+			transform: translateY(-10px);
+			circle{
+				fill: none;
+				stroke: $no5colorwhite;
+				stroke-miterlimit: 10;
+			}
+			polyline{
+				fill: none;
+				stroke: $no5colorwhite;
+				stroke-linecap: round;
+				stroke-miterlimit: 10;
+				stroke-width: 1px;
+			}
+
+			text{
+				font-size: 8px;
+				text-anchor: middle;
+				color: $no5colorwhite;
+				fill: $no5colorwhite;
+			}
+		}
+
+		.animal__label .ischecked{
+			transform: translateY(0);
+		}
+
+		.planet--saturn{
+			.ischecked{
+				transform: translateY(-13px);
+			}
+		}
+
+		&__answer{
+		  display: block;
+		  max-height: 117px;
+		  width: 150px;
+		  vertical-align: top;
+		  font-size: 22px;
+		  text-align: center;
+		  overflow: visible;
+
+		  label {
+			width: 180px;
+			cursor: none; 
+			&:hover, &:focus, &:active {
+				cursor: none; 
+			}
+		  }
+		}
+		.planet--saturn{
+			width: 200px;
+			overflow: visible;
+			transform: rotate(-10deg);
+			animation-play-state: paused;
+			&:hover, &:focus, &:active{
+				animation: turn 1s ease-in-out 0s forwards infinite;
+			}
+		}
+		.planet--earth{
+			width: 110px;
+			overflow: visible;
+			transform: rotate(0deg);
+			animation-play-state: paused;
+			&:hover{
+				animation: turnaround 1s ease-in-out 0s forwards infinite;
+			}
+		}
+		.planet--mars{
+			width: 110px;
+			overflow: visible;
+			transform: rotate(0deg);
+			animation-play-state: paused;
+			&:hover{
+				animation: turnaround 1s ease-in-out 0s forwards infinite;
+			}
+		}
+
+		.explosion,
+		.dust{
+			display: none;
+			opacity: 0;
+			transform-origin: center;
+	  		transform: scale(0);
+		}
+	}
+
+	.beamerisvisible{
+		.beamer{
+			transition: all 0.3s linear;
+			opacity: 0.3;
+		}
+	}
+
+	.animal__answer{
+		z-index: 10000;
+    	position: relative;
+	}
+
+	.animal,
+	.animal__header,
+	.animal__text{
+		display: none;
+	}
+
+	&.planetIsHidden{
+		.planet{
+			animation: endaniform 0.5s linear 0.5s forwards;
+		}
+		.planet__header,
+		.planet__text{
+			animation: endaniform 0.5s linear 0.5s forwards;
+		}
+	}
+
+	&.animalIsVisible{
+		.planet,
+		.planet__header,
+		.planet__text{
+			display: none;
+		}
+		
+		.animal{
+			display: flex;
+		}
+		.animal__header,
+		.animal__text{
+			display: block;
+		}
+
+		.ufowrapper {
+		    margin-top: -115px;
+		    margin-left: -125px;
+		}
+
+		.animal__answer{
+		  label {
+			&:hover, &:focus, &:active {
+				cursor: none; 
+			}
+		  }
+		}
+
+		.light{
+			display: none;
+		}
+
+		.button{
+			z-index: 100;
+    		position: relative;
+		}
+	}
+
+	&.sendit {
+		animation: endani 1s linear 0.5s forwards;
+		.ufowrapper{
+			opacity: 0;
+			transition: all 1s linear 0.3s;
+		}
+		cursor: auto;
+
+		+ .final-text{
+			opacity: 1;
+			position: absolute;
+			top: 49%;
+			transform: translateY(0);
+			transition: all 0.5s linear 0.5s;
+		}
+		
+	}
+
+	.button button.btnclicked{
+		box-shadow: 0 0 25px;
+		animation: endanibtn 0.2s linear forwards 0.2s;
+	}
+
+	@keyframes shootstart {
+	  0% {
+	  	width: 0;
+	  	height: 0;
+	  }
+	  
+	  55% {
+	  	width: 1px;
+	  	height: 1px;
+	  } 
+	  75% {
+	  	width: 90px;
+	  	height: 1px;
+	  	right: 128px;
+	  } 
+	  100% {
+	  	width: 0px;
+	  	height: 0px;
+	  	right: 200px;
+	  } 
+	}
+	@keyframes shootstart2 {
+	  0% {
+	  	width: 0;
+	  	height: 0;
+	  }
+	  55% {
+	  	width: 1px;
+	  	height: 1px;
+	  } 
+	  75% {
+	  	width: 90px;
+	  	height: 1px;
+	  	right: 128px;
+	  } 
+	  100% {
+	  	width: 0px;
+	  	height: 0px;
+	  	right: 200px;
+	  } 
+	}
+	@keyframes turn {
+	  0% {
+	  	transform: rotate(-10deg);
+	  }
+	  50% {
+	  	transform: rotate(10deg);
+	  } 
+	  100% {
+	  	transform: rotate(-10deg);
+	  } 
+	}
+	@keyframes turnaround {
+	  0% {
+	  	transform: rotate(0deg);
+	  }
+	  50% {
+	  	transform: rotate(20deg);
+	  } 
+	  100% {
+	  	transform: rotate(0deg);
+	  } 
+	}
+	@keyframes planetexplose {
+	  0% {
+	  	transform-origin: center;
+	  	transform: scale(1);
+	  }
+	  100% {
+	    transform-origin: center;
+	  	transform: scale(0);
+	  } 
+	}
+	@keyframes explose {
+	  0% {
+	  	transform-origin: center;
+	  	transform: scale(0);
+	  	opacity: 1;
+	  }
+
+	  50% {
+	  	opacity: 1;
+	  }
+
+	  100% {
+	  	opacity: 0;
+	    transform-origin: center;
+	  	transform: scale(5);
+	  } 
+	}
+	@keyframes explosedust {
+	  0% {
+	  	transform-origin: center;
+	  	transform: scale(0);
+	  	opacity: 0.8;
+	  }
+
+	  100% {
+	  	opacity: 0;
+	    transform-origin: center;
+	  	transform: scale(2);
+	  } 
+	}
+
+	@keyframes explosedustcolor {
+	  0% {
+	  	fill: $no5colorwhite;
+	  }
+
+	  100% {
+	  	fill: $no5colorblack;
+	  } 
+	}
+
+	@-webkit-keyframes startani {
+	  0% {
+	    opacity: 0;
+	    transform: translateY(100%);
+	  }
+	  100% {
+	    opacity: 1;
+	    transform: translateY(0);
+	  }
+	}
+
+	@-webkit-keyframes endani {
+	  0% {
+	    opacity: 1;
+	    width: 60%;
+	    transform: scale(1) translateY(0);
+	  }
+	  90% {
+	    opacity: 0;
+	  }
+	  100% {
+	    opacity: 0;
+	    width: 0;
+	    transform: scale(0) translateY(-300%);
+	  }
+	}
+
+	@-webkit-keyframes endaniform {
+	  0% {
+	    opacity: 1;
+	    transform: translateY(0);
+	  }
+	  100% {
+	    opacity: 0;
+	    transform: translateY(-100%);
+	  }
+	}
+
+	@-webkit-keyframes endanibtn {
+	  0% {
+	    opacity: 1;
+	    transform: scale(1);
+	  }
+	  50% {
+	    opacity: 1;
+	    transform: scale(0.5);
+	  }
+	  100% {
+	    opacity: 1;
+	    transform: scale(1);
+	  }
+	}
+	@-webkit-keyframes animal {
+	  0% {
+	    opacity: 1;
+	    transform: scale(1, 1) translate(0, 0);
+	    transform-origin: center;
+	  }
+	  50% {
+	    opacity: 1;
+	  }
+	  90% {
+	    transform: scale(0.5, 0.5) translate(0, -100%);
+	    transform-origin: center;
+	     opacity: 0;
+	  }
+	  100% {
+	    opacity: 0;
+	    transform: scale(0.5, 0.5) translate(0, -100%);
+	    transform-origin: center;
+	  }
+	}
+}
+@media screen and (max-width: 1000px) {
+  	 .wrapper-no5{
+        width: 90%;
+    }
+    .layout {
+		    padding-top: 10%;
+		}
+  }
+  @media screen and (max-width: 500px) {
+  .planet,
+  .animal{
+    	align-items: center;
+    	flex-direction: column;
+
+    	.planet__answer:first-child{
+    		margin-left: -15%;
+    	}
+  }	
+}
