@@ -1,12 +1,397 @@
-$no5color: #010119;
+$no6color: #571133;
+$no6color2: #017A74;
+$no6color3: #00C2BA;
+$no6color4: #38001C;
 
-html{
-	cursor: none;
-}
+$no6textshadowup: 0px 1px 1px #fff,
+                 0px 2px 1px #d6d6d6,
+                 0px 3px 1px #ccc,
+                 0px 4px 1px #c5c5c5,
+                 0px 5px 1px #c1c1c1,
+                 0px 6px 1px #bbb,
+                 0px 8px 1px #bbb,
+                 0px 7px 1px #777,
+                 0px 9px 1px #555,
+                 0px 10px 1px #444;
+$no6textshadowdown: rgba(255,255,255, 0.1) 0px 2px 3px,
+	    			rgba(255,255,255, 1) 0px 4px 3px;
+
 body.no6{
-	
+	height: 100vh;
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
+	color: #fff;
+}
+.wrapper-no6.v1{
+	background-color: $no6color2;
+	transition: background-color 0.3s linear;
+	.nav{
+		color: $no6color3;
+	}
+	.button{
+		display: none;
+	}
+	.button2{
+		display: flex;
+	}
+}
+.wrapper-no6.v2{
+	background-color: $no6color;
+	transition: background-color 0.3s linear;
+	.nav{
+		color: $no6color4;
+	}
+	.button{
+		display: block;
+	}
+	.button2{
+		display: none;
+	}
 }
 
 .wrapper-no6 {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center; 
+	.nav{
+		transition: color 0.3s linear;
+		position: absolute;
+    	top: 50px;
+		&__el{
+			display: flex;
+			list-style-type: none;
+			padding: 0;
+			li:first-child{
+				margin-left: 0;
+			}
+		}
+
+		&__item{
+			margin-left: 50px;
+			cursor: pointer;
+			&.active,
+			&:hover,
+			&:focus{
+				color: white;
+				transition: color 0.3s linear;
+			}
+		}
+	}
+	.button,
+	.button2{
+		font-size: 100px;
+		cursor: pointer;
+		width: 170px;
+	}
 	
+	.on,
+	.off{
+		p{
+		    color: rgba(255,255,255,0.5);
+		    text-shadow:  $no6textshadowdown;
+		    transition: text-shadow 0.3s linear, margin 0.3s linear;
+		}	
+	}
+	.button2{
+		width: auto;
+		p{
+			margin: 0;
+		}
+		.on-wrapper{
+			margin-right: 25px;
+			.on{
+				p{
+					margin-top: -2.5px;
+					text-shadow:  $no6textshadowdown;
+			        transition: text-shadow 0.3s linear, margin 0.3s linear;
+			}	
+		}
+		}
+		.on-wrapper.active{
+			.on{
+				p{
+					margin-top: -7.5px;
+				    color: rgba(255,255,255,0.5);
+				    text-shadow: $no6textshadowup;
+				    transition: text-shadow 0.3s linear, margin 0.3s linear;
+				}	
+			}
+		}
+		.off-wrapper{
+			.off{
+				p{
+					margin-top: -2.5px;
+				    text-shadow: $no6textshadowdown;
+				}	
+			}
+		}
+		.off-wrapper.active{
+			.off{
+				p{
+					margin-top: -7.5px;
+				    color: rgba(255,255,255,0.5);
+				    text-shadow: $no6textshadowup;
+				                
+				    transition: text-shadow 0.3s linear, margin 0.3s linear;
+				}	
+			}
+		}
+		
+	}
+	.button{
+		margin-top: -5%;
+		.on-wrapper,
+		.off-wrapper{
+			position: absolute;
+		}
+		.off-wrapper{
+			margin-left: -10px;
+		}
+		.on{
+		    overflow: hidden;
+		    height: 50px;
+		    position: absolute;
+		    top: 50px;
+			p{
+		    	margin-left: 0;
+				margin-top: -43%;
+
+			    color: rgba(255,255,255,0.5);
+			    text-shadow: $no6textshadowdown;
+			    transition: text-shadow 0.3s linear, margin 0.3s linear;
+			}	
+
+		}
+		.on-before{
+				overflow: hidden;
+			    height: 50px;
+			    position: absolute;
+			    top: 0;
+			p{
+				margin-left: 0;
+				margin-top: -7%;
+			    color: rgba(255,255,255,0.5);
+			    text-shadow: $no6textshadowdown;
+			    transition: text-shadow 0.3s linear, margin 0.3s linear;
+			}
+
+		}
+		.on-wrapper.active.first {
+			.on{
+				opacity: 0;
+				p{
+					margin-left: 0;
+					margin-top: -43%;
+				    text-shadow: $no6textshadowdown;
+				}	
+			}
+			.on-before{
+				opacity: 0;
+				p{
+					margin-left: 0;
+					margin-top: -7%;
+					text-shadow: $no6textshadowdown;
+				}
+
+			}
+		}
+		.on-wrapper.notactive {
+			.on{
+				opacity: 1;
+				animation: down 0.5s linear 0.5s;
+				animation-fill-mode: forwards;
+				p{
+					margin-left: 0;
+					margin-top: -43%;
+				    text-shadow: $no6textshadowdown;
+				}	
+			}
+			.on-before{
+				opacity: 1;
+				animation: up 0.5s linear 0.5s;
+				animation-fill-mode: forwards;
+				p{
+					margin-left: 0;
+					margin-top: -7%;
+					text-shadow: $no6textshadowdown;
+				}
+			}
+		}
+		.on-wrapper.active {
+			.on{
+				opacity: 0;
+				animation: notoffdown 0.5s linear 0.5s;
+				animation-fill-mode: forwards;
+				p{
+					margin-top: -47%;
+		    		margin-left: -3%;
+		    		
+				    color: rgba(255,255,255,0.5);
+				    text-shadow: $no6textshadowup;
+				    transition: text-shadow 0.3s linear 1s, margin 0.3s linear 1s;
+				}	
+				transition: opacity 0.3s linear 0.5s;
+			}
+			.on-before{
+				opacity: 0;
+				animation: notoffup 0.5s linear 0.5s;
+				animation-fill-mode: forwards;
+				p{
+					margin-top: -11%;
+					margin-left: -3%;
+					text-shadow: $no6textshadowup;
+			       transition: text-shadow 0.3s linear 0.5s, margin 0.3s linear 1s;
+				}
+				transition: opacity 0.3s linear 0.5s;
+			}
+		}
+		.off{
+		    overflow: hidden;
+		    height: 50px;
+		    position: absolute;
+		    top: 50px;
+		    opacity: 0;
+			p{
+		    	margin-left: 0;
+				margin-top: -35%;
+	    		
+			    color: rgba(255,255,255,0.5);
+			    text-shadow: $no6textshadowdown;
+			    transition: text-shadow 0.3s linear, margin 0.3s linear;
+			}	
+
+		}
+		.off-before{
+				overflow: hidden;
+			    height: 50px;
+			    position: absolute;
+			    top: 0;
+			    opacity: 0;
+			p{
+				margin-left: 0;
+				margin-top: -7%;
+			    color: rgba(255,255,255,0.5);
+			    text-shadow: $no6textshadowdown;
+			    transition: text-shadow 0.3s linear, margin 0.3s linear;
+			}
+
+		}
+		.off-wrapper.active {
+			.off{
+				animation: notoffdown 0.5s linear 0.5s;
+				animation-fill-mode: forwards;
+				p{
+					text-shadow: $no6textshadowup;
+			        transition: text-shadow 0.3s linear 1s;
+		        }
+			}
+			.off-before{
+				animation: notoffup 0.5s linear 0.5s;
+				animation-fill-mode: forwards;
+				p{
+					text-shadow: $no6textshadowup;	
+			         transition: text-shadow 0.3s linear 1s;
+		        }
+			}
+		}
+		.off-wrapper.notactive {
+			.off{
+				opacity: 1;
+				transition: opacity 0.3s linear 0.5s;
+				animation: offdown 0.5s linear 0.5s;
+				animation-fill-mode: forwards;
+				p{
+				    text-shadow: $no6textshadowdown;
+				}	
+			}
+			.off-before{
+				opacity: 1;
+				transition: opacity 0.3s linear 0.5s;
+				animation: offup 0.5s linear 0.5s;
+				animation-fill-mode: forwards;
+				p{
+					text-shadow: $no6textshadowdown;
+				}
+			}
+		}
+	}
+	@keyframes up {
+	  0% {
+	  	top: 0;
+	  	opacity: 1;
+	  }
+	  50%{
+	  	top: -50px;
+	  	opacity: 1;
+	  }
+	  100% {
+	  	top: -50px;
+	  	opacity: 0;
+	  } 
+	}
+	@keyframes down {
+	  0% {
+	  	top: 50px;
+	  	opacity: 1;
+	  }
+	  50%{
+	  	top: 90px;
+	  	opacity: 1;
+	  }
+	  100% {
+	  	top: 90px;
+	  	opacity: 0;
+	  } 
+	}
+	@keyframes offup {
+	  0% {
+	  	top: 0;
+	  	opacity: 1;
+	  }
+	  50%{
+	  	top: -50px;
+	  	opacity: 1;
+	  }
+	  100% {
+	  	top: -50px;
+	  	opacity: 0;
+	  } 
+	}
+	@keyframes offdown {
+	  0% {
+	  	top: 50px;
+	  	opacity: 1;
+	  }
+	  50%{
+	  	top: 90px;
+	  	opacity: 1;
+	  }
+	  100% {
+	  	top: 90px;
+	  	opacity: 0;
+	  } 
+	}
+	@keyframes notoffup {
+	  0% {
+	  	opacity: 0;
+	  }
+	  50%{
+	  	opacity: 0;
+	  }
+	  100% {
+	  	opacity: 1;
+	  } 
+	}
+	@keyframes notoffdown {
+	  0% {
+	  	opacity: 0;
+	  }
+	  50%{
+	  	opacity: 0;
+	  }
+	  100% {
+	  	opacity: 1;
+	  } 
+	}
 }
