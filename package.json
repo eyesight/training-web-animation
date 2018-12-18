@@ -1,6 +1,6 @@
 {
   "name": "Gleitflug",
-  "description": "Flightjournal",
+  "description": "Animation-training",
   "version": "0.0.1",
   "license": "MIT",
   "author": {
@@ -25,6 +25,7 @@
     "bourbon-neat": "^1.9.0",
     "browser-sync": "^2.23.6",
     "del": "^3.0.0",
+    "gsap": "^2.0.2",
     "gulp-sass": "^3.1.0",
     "imagesloaded": "^4.1.4",
     "normalize.scss": "^0.1.0",
