@@ -1,0 +1,25 @@
+body.no8 {
+  font-family: 'Delius Swash Caps', cursive;
+  height: 100vh;
+  text-align: center;
+  color: #004466;
+  background: #E4E5E6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; }
+
+.wrapper-no8 {
+  position: relative;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .wrapper-no8 .penguin {
+    width: 25%; }
+    .wrapper-no8 .penguin .penguin-old {
+      display: block; }
+    .wrapper-no8 .penguin .penguin-young {
+      display: none; }
+    .wrapper-no8 .penguin .egg {
+      display: none; }

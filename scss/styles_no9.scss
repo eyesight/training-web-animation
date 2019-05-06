@@ -1,0 +1,19 @@
+$no8color: #bbbbbb;
+$no8color2: #004466;
+$no8color3: #E4E5E6;
+
+body.no8{
+	height: 100vh;
+	font-family: 'Delius Swash Caps', cursive;
+
+	text-align: center;
+	color: $no8color2;
+	background: $no8color3;
+	display: flex;
+  	align-items: center;
+  	justify-content: center;
+  	overflow: hidden;
+}
+.wrapper-no8{
+	
+}  
