@@ -1,0 +1,19 @@
+$no10color: #bbbbbb;
+$no10color2: #004466;
+$no10color3: #E4E5E6;
+
+body.no10{
+	height: 100vh;
+	font-family: 'Delius Swash Caps', cursive;
+
+	text-align: center;
+	color: $no10color2;
+	background: $no10color3;
+	display: flex;
+  	align-items: center;
+  	justify-content: center;
+  	overflow: hidden;
+}
+.wrapper-no10{
+	
+}  

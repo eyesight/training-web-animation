@@ -1,6 +1,6 @@
-body.no8 {
-  height: 100vh;
+body.no9 {
   font-family: 'Delius Swash Caps', cursive;
+  height: 100vh;
   text-align: center;
   color: #004466;
   background: #E4E5E6;
@@ -8,3 +8,36 @@ body.no8 {
   align-items: center;
   justify-content: center;
   overflow: hidden; }
+
+.wrapper-no9 {
+  position: relative;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .wrapper-no9 .penguin {
+    width: 25%; }
+    .wrapper-no9 .penguin .penguin-old {
+      display: block; }
+    .wrapper-no9 .penguin .penguin-young {
+      display: none; }
+    .wrapper-no9 .penguin .egg {
+      display: none; }
+    @media screen and (max-width: 1024px) {
+      .wrapper-no9 .penguin {
+        width: 30%; }
+        .wrapper-no9 .penguin .penguin-old {
+          display: none; }
+        .wrapper-no9 .penguin .penguin-young {
+          display: block; }
+        .wrapper-no9 .penguin .egg {
+          display: none; } }
+    @media screen and (max-width: 500px) {
+      .wrapper-no9 .penguin {
+        width: 70%; }
+        .wrapper-no9 .penguin .penguin-old {
+          display: none; }
+        .wrapper-no9 .penguin .penguin-young {
+          display: none; }
+        .wrapper-no9 .penguin .egg {
+          display: block; } }

@@ -3,35 +3,235 @@ $no8color2: #004466;
 $no8color3: #E4E5E6;
 
 body.no8{
-	font-family: 'Delius Swash Caps', cursive;
 	height: 100vh;
+	font-family: 'Delius Swash Caps', cursive;
+
 	text-align: center;
-	color: $no8color2;
+	color: black;
 	background: $no8color3;
 	display: flex;
   	align-items: center;
   	justify-content: center;
   	overflow: hidden;
 }
-.wrapper-no8{ 
-	position: relative;
-	width: 50%;
-	display: flex;
-	align-items: center;
-    justify-content: center;
-	.penguin{
-		width: 25%;
-
-		.penguin-old{
+.wrapper-no8{
+	width: 80%;
+	.paragraph{
+		font-size: 16px;
+	}
+	.burnit{
+		overflow: hidden;
+		position: relative;
+		color: grey;
+		transition: all 0.75s ease-out;
+		display: inline-flex;
+		&::before{
+			bottom: 0;
+			left: 0;
+			content: '';
+			position: absolute;
+			height: 20px;
+			min-width: 100%;
 			display: block;
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 679.73 781.43'%3e%3cstyle type='text/css'%3e svg %7b width: 50px; height: auto;%7d .flame1 .right %7b animation: 0.5s ease-in 0.2s infinite alternate-reverse both flame2;%7d .flame1 .left %7b animation: 0.75s ease-in 0.5s infinite alternate-reverse both flame2;%7d .flame1 .middle %7b animation: 0.75s ease-in 0.5s infinite alternate-reverse both flame3;%7d .flame1 .yellow %7b animation: 1.5s ease-in 0.5s infinite alternate-reverse both flame4;%7d .flame1 .rauch1 %7b animation: 3s ease-in 0.5s infinite rauch;%7d .flame2 .right %7b animation: 0.5s ease-in 0.2s infinite alternate-reverse both flame6;%7d .flame2 .left %7b animation: 0.5s ease-in 0.2s infinite alternate-reverse both flame2;%7d .flame2 .middle %7b animation: 1s ease-in 0s infinite alternate-reverse both flame3;%7d .flame2 .yellow %7b animation: 2s ease-in 0s infinite alternate-reverse both flame7;%7d %40keyframes flame1 %7b 0%25 %7b opacity: 1;%7d 100%25 %7b opacity: 0;%7d %7d %40keyframes flame2 %7b 0%25 %7b transform-origin: left; transform: translate(0%25, 0%25) rotate(0deg); opacity: 1;%7d 10%25 %7b transform-origin: left; transform: translate(0%25, 0%25) rotate(0deg);%7d 50%25 %7b transform-origin: left; transform: translate(20px, 0px) rotate(5deg);%7d 70%25 %7b transform: translate(20px, 50px) rotate(5deg);%7d 90%25 %7b transform: translate(10px, 10px) rotate(5deg);%7d 100%25 %7b transform-origin: left; transform: translate(0%25, 0%25) rotate(0deg); opacity: 0;%7d %7d %40keyframes flame3 %7b 0%25 %7b transform-origin: left; transform: translateY(20px) rotate(0deg); opacity: 1;%7d 10%25 %7b transform-origin: left; transform: translateY(80px) rotate(5deg);%7d 50%25 %7b transform-origin: left; transform: translateY(20px) rotate(-3deg);%7d 70%25 %7b transform: translateY(20px) rotate(5deg);%7d 90%25 %7b transform: translateY(20px) rotate(2deg);%7d 100%25 %7b transform-origin: left; transform: translateY(0) rotate(0deg); opacity: 0.8;%7d %7d %40keyframes flame4 %7b 0%25 %7b transform-origin: 20%25 100%25; transform: rotate(0deg) scale(0.7); opacity: 1;%7d 10%25 %7b transform: rotate(2deg) scale(0.8);%7d 50%25 %7b transform: rotate(-15deg) scale(0.9);%7d 70%25 %7b transform: rotate(5deg) scale(1);%7d 90%25 %7b transform: rotate(2deg) scale(1);%7d 100%25 %7b transform-origin: 20%25 100%25; transform: rotate(0deg) scale(1); opacity: 0.5;%7d %7d %40keyframes flame6 %7b 0%25 %7b transform: translateY(200px); opacity: 1;%7d 100%25 %7b transform: translateY(-100px); opacity: 0;%7d %7d %40keyframes flame2 %7b 0%25 %7b transform-origin: left; transform: translate(0%25, 0%25); opacity: 1;%7d 70%25 %7b transform: translate(0px, 20px);%7d 100%25 %7b transform-origin: left; transform: translate(0%25, 0%25); opacity: 0;%7d %7d %40keyframes flame7 %7b 0%25 %7b transform-origin: 50%25 100%25; transform: rotate(0deg) scale(0.7); opacity: 1;%7d 10%25 %7b transform: rotate(2deg) scale(0.8);%7d 50%25 %7b transform: rotate(-15deg) scale(0.9);%7d 70%25 %7b transform: rotate(5deg) scale(1);%7d 90%25 %7b transform: rotate(2deg) scale(1);%7d 100%25 %7b transform-origin: 50%25 100%25; transform: rotate(0deg) scale(1); opacity: 0.5;%7d %7d %3c/style%3e%3ctitle%3eflame2%3c/title%3e%3cg class='flame1'%3e%3cpath class='right' d='M225.88,382.63q6.44-7.31,12.56-14.88c6-7.38,12.6-14.17,18.9-21.27,8.4-9.45,18.31-17.39,24.94-28.17,3.3-5.37,6.23-10.94,9.51-16.32,2.42-4,5-7.69,6.38-12.13.72-2.29,1.67-9.37,5-9.21,1.94.09,2.56,1.53,2.63,3.27.12,3.21-2.44,7.1-3.38,10.22-11.11,37.06-19.06,76.9-20.76,115.57-.9,20.47-1.17,41.7,1.84,62,2.36,15.93,6.68,31.5,10,47.25,1.56,7.52,3,15.06,5,22.49,1,3.8,2.1,7.55,3.25,11.29a163.12,163.12,0,0,0-140-79.29S222.7,386.26,225.88,382.63Z' transform='translate(0 -18.36)' style='fill: %23ffe200'/%3e%3cpath class='middle' d='M225.88,382.63c-9.71-24.93-23.15-48.22-31.38-73.77-4.7-14.58-10.19-29.74-10.9-45.15-.26-5.77-.69-11.58-.39-17.36.15-3,3.69-16.06-1.1-16.06-2.78,0-3.53,4.86-4.44,6.78a72.4,72.4,0,0,1-5.6,9.4c-2.69,4-5.21,8-7.6,12.15a330.48,330.48,0,0,0-16.7,33.85c-7.16,16.67-15.18,32.83-22,49.67-11.64,28.62-24.27,56.33-37.49,84.26-6.82,14.42-13.76,28.8-20.47,43.28-1.27,3.65-37.7,68.17-44.06,81.6,29.29-43.7,81.43-77.8,138-77.8a163.12,163.12,0,0,1,140,79.29c-1.15-3.75-2.26-7.5-3.25-11.29-1.93-7.43-3.42-15-5-22.49-3.28-15.75-19.08-40.57-26.76-54.72C262,455.51,231,395.26,225.88,382.63Z' transform='translate(0 -18.36)' style='fill: %23ffe200'/%3e%3cpath class='left' d='M67.23,472c-2.08-12.76-3.33-25.68-4.93-38.51l-3.22-25.83c-.42-3.39,0-9.46-1.6-12.59-3-5.74-5.22,1.45-5.61,4.1-.32,2.16-.75,4.31-1.14,6.46q-2.26,12.57-4.56,25.14c-1.86,10.22-3.77,20.44-5.59,30.67-4.89,27.45-10.25,54.86-14.54,82.4-.22,1.39-.35,2.92-.55,4.42a164.15,164.15,0,0,1,34.2-37.09l16.5-13.84S68,474.3,67.23,472Z' transform='translate(0 -18.36)' style='fill: %23ffe200'/%3e%3cellipse class='circle' cx='161.86' cy='617.82' rx='161.86' ry='163.21' style='fill: %23ffe200'/%3e%3cpath class='yellow' d='M202.39,486.77c-5.8,0-11.37,25-11.8,26-10.35,23.63-23.12,47.68-38.3,68.58C117.51,629.21,53.49,656.58,72,728.9c21.6,84.24,140.52,96.49,180.36,20.06,25.3-48.54-1.5-92.51-20.12-137-9.64-23-19.22-48.13-21.48-72.88-.27-2.95-.7-52.27-8.4-52.27m-23.91,61.6s-.89,1.93,0,.1C178.44,548.45,178.51,548.29,178.47,548.37Z' transform='translate(0 -18.36)' style='fill: %23ff0'/%3e%3c/g%3e%3cg class='flame2'%3e%3cpath class='right' data-name='right' d='M438.47,475.12c-19.28-13.78-31.52-24-36.48-27.08-9.65-6-63.12-44.91-70.09-49.76-3.44-2.4-14.57-14.42-18.78-19.4-1.4-1.65-6.36-8.49-9.33-7.95-1.72.31-2.1,1.67-1.95,3.23C302.11,377,318,402,319.62,404.48c19.9,31.35,32,46.11,41.64,78.94,5.19,17.68,6.1,37,5.88,55.5C367,553.41,365,567.81,364,582.24c-.48,6.89-.89,13.79-1.72,20.65-.42,3.5-1,7-1.53,10.46a146.71,146.71,0,0,1,115.17-87.63S463.15,495.23,438.47,475.12Z' transform='translate(0 -18.36)' style='fill: %23ffe200'/%3e%3cpath class='left' data-name='left' d='M589.15,460.8c4.42-26.49,7.07-53.33,10.46-80Q603,354,606.45,327.22c.9-7-.08-19.64,3.39-26.14,6.36-11.91,11.07,3,11.9,8.52.68,4.49,1.6,9,2.42,13.42q4.79,26.11,9.68,52.2c4,21.23,8,42.45,11.87,63.69,10.38,57,21.75,113.91,30.84,171.11.46,2.89.74,16.38,1.17,19.5-20-29.2-44.5-65.52-72.55-87.34l-35-28.73S587.61,465.61,589.15,460.8Z' transform='translate(0 -18.36)' style='fill: %23ffe200'/%3e%3cpath class='middle' data-name='middle' d='M648.81,540.24c-18.08-20.73-36.08-38.73-49.08-56.73-14-21-21.22-39.68-28-54-13.12-27.73-23-50-30-90-3.11-17.78-3.76-28.64-10.87-45.2a328.12,328.12,0,0,0-16.58-33.6c-2.36-4.13-4.87-8.11-7.54-12.06a71.88,71.88,0,0,1-5.56-9.33c-.9-1.91-1.65-6.74-4.41-6.74-4.76,0-1.25,13-1.09,16,.3,5.74-.13,11.5-.39,17.24-.7,15.3-6.15,30.35-10.82,44.83-8.18,25.37-21.52,48.49-31.16,73.25-5.12,12.54-35.84,72.35-40.56,81-7.63,14-23.32,38.69-26.57,54.33-1.55,7.46-3.16,13.91-5.08,21.29-1,3.77-2.23,7.53-3.37,11.25-4,10.88-21.73,34.33-21.73,84.42,0,90.14,72.47,163.21,161.86,163.21s161.86-73.07,161.86-163.21A163.37,163.37,0,0,0,648.81,540.24Z' transform='translate(0 -18.36)' style='fill: %23ffe200'/%3e%3cpath class='yellow' data-name='yellow' d='M483.48,454.93c-8.48,0-9,54.34-9.25,57.59-2.49,27.27-13,54.91-23.67,80.3-20.52,49-50,97.49-22.17,151,43.89,84.2,174.9,70.71,198.7-22.1C647.52,642,577,611.86,538.68,559.1c-16.72-23-30.79-49.52-42.2-75.56-.47-1.08-6.61-28.61-13-28.61m26.39,68c.94,2,0-.1,0-.11S509.86,522.89,509.87,522.91Z' transform='translate(0 -18.36)' style='fill: %23ff0'/%3e%3c/g%3e%3c/svg%3e");			transform: translateY(15px);
+			transition: all 0.5s ease-out;
 		}
-
-		.penguin-young{
-			display: none;
-		}
-
-		.egg{
-			display: none;
+		&:hover{
+			color: black;
+			transition: all 0.75s ease-out;
+			&::before{
+				transform: translateY(0px);
+				transition: all 0.5s ease-out;
+			}
 		}
 	}
+	/* svg{
+		width: 50px;
+		height: auto;
+		display: none;}
+
+	.flame1{	
+		.right{
+			animation: 0.5s ease-in 0.2s infinite alternate-reverse both flame2;			
+		}
+		.left{
+			animation: 0.75s ease-in 0.5s infinite alternate-reverse both flame2;			
+		}
+		.middle{
+			animation: 0.75s ease-in 0.5s infinite alternate-reverse both flame3;			
+		}
+		.yellow{
+			animation: 1.5s ease-in 0.5s infinite alternate-reverse both flame4;			
+		}
+		.rauch1{
+			animation: 3s ease-in 0.5s infinite rauch;			
+		}
+	}
+	.flame2{	
+		.right{
+			animation: 0.5s ease-in 0.2s infinite alternate-reverse both flame6;			
+		}
+		.left{
+			animation: 0.5s ease-in 0.2s infinite alternate-reverse both flame2;			
+		}
+		.middle{
+			animation: 1s ease-in 0s infinite alternate-reverse both flame3;			
+		}
+		.yellow{
+			animation: 2s ease-in 0s infinite alternate-reverse both flame7;			
+		}
+		.rauch1{
+			animation: 4s ease-in 0s infinite rauch;			
+		}
+		.rauch2{
+			animation: 5s ease-in 0.3s infinite rauch;			
+		}
+	} */
 }  
+
+/* @keyframes flame1 {
+	0% { opacity: 1; }
+	100% { opacity: 0; }
+ }
+
+ @keyframes flame2 {
+	0% { 
+		transform-origin: left;
+		transform: translate(0%, 0%) rotate(0deg);
+		opacity: 1;
+	}
+	10% { 
+		transform-origin: left;
+		transform: translate(0%, 0%) rotate(0deg);
+	}
+	50% { transform-origin: left;
+		transform: translate(20px, 0px) rotate(5deg);
+	}
+	70% {
+		transform: translate(20px, 50px) rotate(5deg);
+	}
+	90% {
+		transform: translate(10px, 10px) rotate(5deg);
+	}
+	100% { 
+		transform-origin: left;
+		transform: translate(0%, 0%) rotate(0deg); 
+		opacity: 0;
+	}
+ }
+ @keyframes flame3 {
+	0% { 
+		transform-origin: left;
+		transform: translateY(20px) rotate(0deg);
+		opacity: 1;
+	}
+	10% { 
+		transform-origin: left;
+		transform: translateY(80px) rotate(5deg);
+	}
+	50% { transform-origin: left;
+		transform: translateY(20px) rotate(-3deg);
+	}
+	70% {
+		transform: translateY(20px) rotate(5deg);
+	}
+	90% {
+		transform: translateY(20px) rotate(2deg);
+	}
+	100% { 
+		transform-origin: left;
+		transform: translateY(0) rotate(0deg); 
+		opacity: 0.8;
+	}
+ }
+ @keyframes flame4 {
+	0% { 
+		transform-origin: 20% 100%;
+		transform: rotate(0deg) scale(0.7);
+		opacity: 1;
+	}
+	10% { 
+		transform: rotate(2deg) scale(0.8);
+	}
+	50% {
+		transform: rotate(-15deg) scale(0.9);
+	}
+	70% {
+		transform: rotate(5deg) scale(1);
+	}
+	90% {
+		transform: rotate(2deg) scale(1);
+	}
+	100% { 
+		transform-origin: 20% 100%;
+		transform: rotate(0deg) scale(1); 
+		opacity: 0.5;
+	}
+ }
+
+ @keyframes flame6 {
+	0% { 
+		transform: translateY(200px);
+		opacity: 1;
+	}
+	100% { 
+		transform: translateY(-100px); 
+		opacity: 0;
+	}
+ }
+
+ @keyframes flame2 {
+	0% { 
+		transform-origin: left;
+		transform: translate(0%, 0%);
+		opacity: 1;
+	}
+	70% {
+		transform: translate(0px, 20px);
+	}
+	100% { 
+		transform-origin: left;
+		transform: translate(0%, 0%); 
+		opacity: 0;
+	}
+ }
+
+ @keyframes flame7 {
+	0% { 
+		transform-origin: 50% 100%;
+		transform: rotate(0deg) scale(0.7);
+		opacity: 1;
+	}
+	10% { 
+		transform: rotate(2deg) scale(0.8);
+	}
+	50% {
+		transform: rotate(-15deg) scale(0.9);
+	}
+	70% {
+		transform: rotate(5deg) scale(1);
+	}
+	90% {
+		transform: rotate(2deg) scale(1);
+	}
+	100% { 
+		transform-origin: 50% 100%;
+		transform: rotate(0deg) scale(1); 
+		opacity: 0.5;
+	}
+ }
+
+ @keyframes rauch {
+	0% { 
+		transform: translateY(500px) scale(0);
+		opacity: 0;
+	}
+	50% { 
+		transform: translateY(500px) scale(0);
+		opacity: 0;
+	}
+	100% { 
+		transform: translateY(-500px) scale(2); 
+		opacity: 1;
+	}
+ } */
