@@ -1,23 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Prototype</title>
 
-    <!-- allStyles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <link href="css/styles_no8.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Delius+Swash+Caps" rel="stylesheet">
-    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Prototype</title>
+
+  <!-- allStyles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link href="css/styles_no8.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700" rel="stylesheet">
+  <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 </head>
+
 <body class="no8">
- <div class="wrapper-no8">
-   <h1>The link which <a class="burnit">burns</a> on hover</h1>
-     <p class="paragraph">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed <a class="burnit">diam nonumy eirmod</a> diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. <a class="burnit">At vero</a> eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, <a class="burnit">ed diam voluptua. At</a> sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est <a class="burnit">Lorem ipsum</a> dolor sit amet.</p>
-          <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 679.73 781.43">
+  <div class="wrapper-no8">
+    <section class="text-wrapper">
+      <h2 class="title-2">Fire: <a class="burnit">hover me</a></h2>
+      <p class="paragraph">Lorem ipsum g elitr, sed <a class="burnit">hover me</a> diam nonumy eirmod sed diam
+        voluptua. <a class="burnit">At vero</a> eos et accusam et juet ea rebum. ipsum dolor sit amet. Lorem ipsum dolor
+        sit amet, consetetur sadnt ut liquyam erat, <a class="burnit">ed diam voluptua. At</a>
+        sed diam voluptua. tea rebum. Stetanctus est <a
+          class="burnit">Lorem ipsum</a> dolor sit amet.</p>
+    </section>
+    <section class="text-wrapper">
+      <h2 class="title-2">Beer: <a class="beer">hover me</a></h2>
+      <p class="paragraph">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed <a class="beer">diam nonumy
+          eirmod</a> diam nonliquyam erat, sed diam voluptua. <a
+          class="beer">At vero</a> eos et a kasd gubergren, no sea takimata sanctus est Lorem ipsum do, consetetur
+        sadipscing uyam erat, <a class="beer">ed diam voluptua. At</a> sed diam voluptua. Aten, no
+        sea takimata sanctus
+    </section>
+    <section class="text-wrapper">
+      <h2 class="title-2">Fish: <a class="water">hover me</a></h2>
+      <p class="paragraph">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed <a class="water">diam nonumy
+          eirmod</a> diam nosed diam voluptua. <a class="water">At vero</a> eos
+        et accusamkasd gubergren, no sea takimata sanctusrem ipsum itr, sed dia
+        aliquyam erat, <a class="water">ed diam voluptua. At</a> sed diam voluptua. Aten, no sea takimata sanctus est <a
+          class="water">Lorem ipsum</a> dolor sit amet.</p>
+    </section>
+    <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1501.89 664">
+      <style type="text/css">
+         svg {
+          width: 500px;
+          height: auto; }
+         .wave {
+          opacity: 0.5; }
+         .whale {
+          opacity: 0.8;
+          animation: 5s ease-in infinite whale; }
+         .flosse {
+          animation: 1s ease-in infinite flosse; }
+         .fluid,
+         .fluid-3 {
+          animation: 2s ease-in infinite wave; }
+         .fluid-2,
+         .fluid-7 {
+          animation: 3s ease-in infinite wave; }
+         .fluid-4,
+         .fluid-5 {
+          animation: 2.5s ease-in infinite wave; }
+         .fluid-6 {
+          animation: 1s ease-in infinite wave; }
+      
+      @keyframes whale {
+        0% {
+          transform: translateY(800px); }
+        100% {
+          transform: translateY(-800px); } }
+      
+      @keyframes flosse {
+        0% {
+          transform-origin: 45% 100%;
+          transform: rotate(0deg); }
+        50% {
+          transform-origin: 45% 100%;
+          transform: rotate(5deg); }
+        75% {
+          transform-origin: 45% 100%;
+          transform: rotate(-5deg); }
+        100% {
+          transform-origin: 45% 100%;
+          transform: rotate(0deg); } }
+      
+      @keyframes wave {
+        0% {
+          opacity: 0; }
+        50% {
+          opacity: 1; }
+        100% {
+          opacity: 0; } }
+      </style>
+      <title>water</title>
+      <g class="wave">
+        <rect class="fluid2" x="0.83" width="1500" height="995.98" style="fill: #3ff"/>
+      </g>
+      <g class="whale">
+        <path d="M654.49,43.66c68.77-.13,124.85,167.84,125.25,375.17.27,135.57-22.07,203.2-46.28,270-13.53,37.35-53.7,105.59-77.5,105.63-24,0-51.69-40.86-67.25-77.89C553.6,633,531,554.39,530.71,419.32,530.3,212,585.72,43.8,654.49,43.66Z" transform="translate(1.1 -1.16)" style="fill: #2b3838"/>
+        <g class="flossevorn">
+          <path d="M539.93,349.09C476.53,480.28,450.56,494.21,430,514.85s-21.25,61.94,1.2,50.66,54.68-33,71.49-50.81c5.3-5.62,40.38-56.19,42.81-76.08C550.77,395.41,539.93,349.09,539.93,349.09Z" transform="translate(1.1 -1.16)" style="fill: #2b3838"/>
+          <path d="M774.53,348.63C838.45,479.57,864.47,493.4,885.1,514s21.49,61.86-1,50.67-54.81-32.77-71.69-50.52c-5.32-5.6-40.6-56-43.1-75.91C763.87,395,774.53,348.63,774.53,348.63Z" transform="translate(1.1 -1.16)" style="fill: #2b3838"/>
+        </g>
+        <g class="flosse">
+          <path d="M657.32,725.21l-1-.07v.13c-28.57,2-62.91,2.56-62.91,2.56,20.67,36.16,43.52,94.12,19,105.05C520.06,859.36,502,982.95,507.66,983.28c10.3.6,30-31.55,43.45-40.19,14.61-9.39,38.83-13.65,65.51-10.43,14.95,1.81,22.27-12.63,41.07-12.72s26.18,14.42,41.12,12.56c26.68-3.33,50.91.84,65.55,10.17,13.47,8.58,33.32,40.66,43.61,40,5.66-.35-12.88-123.87-105.39-150-24.52-10.84-8.94-66.37,11.59-102.61,0,0-27.3-2.93-55.87-4.82v-.13Z" transform="translate(1.1 -1.16)" style="fill: #2b3838"/>
+        </g>
+      </g>
+      <g class="welle">
+        <path class="fluid" d="M-.1,609.18C-.1,620.9,63.73,687.91,206.74,445c85.89-145.89,295-191.76,447,21.7,97.91,137.5,293.64,285.23,406,137.58,146.6-192.65,332.42-140.36,440.25,6.88" transform="translate(1.1 -1.16)" style="fill: none;stroke: #fafcfc;stroke-miterlimit: 10;stroke-width: 2px"/>
+        <path class="fluid-2" data-name="fluid" d="M1.73,939.31c0,10.1,63.66,67.84,206.28-141.45,85.66-125.7,294.19-165.23,445.78,18.7C751.43,935,946.63,1062.32,1058.68,935.1c146.2-166,331.52-120.94,439.05,5.93" transform="translate(1.1 -1.16)" style="fill: none;stroke: #fafcfc;stroke-miterlimit: 10;stroke-width: 2px"/>
+        <path class="fluid-3" data-name="fluid" d="M3.73,782.62c0,9.83,57.8,66,187.28-137.65,77.77-122.32,267.1-160.78,404.73,18.19,88.65,115.28,265.88,239.15,367.61,115.35,132.74-161.53,301-117.68,398.62,5.77" transform="translate(1.1 -1.16)" style="fill: none;stroke: #fafcfc;stroke-miterlimit: 10;stroke-width: 2px"/>
+        <path class="fluid-4" data-name="fluid" d="M3.73,438.18c0,11.72,63.49,78.73,205.73-164.17C294.89,128.13,502.86,82.26,654,295.71c97.38,137.5,292.06,285.23,403.81,137.58,145.81-192.65,330.63-140.36,437.88,6.88" transform="translate(1.1 -1.16)" style="fill: none;stroke: #fafcfc;stroke-miterlimit: 10;stroke-width: 2px"/>
+        <path class="fluid-5" data-name="fluid" d="M3.73,278.71c0,9.95,63.49,66.84,205.73-139.38C294.89,15.47,502.86-23.48,654,157.75c97.38,116.74,292.06,242.17,403.81,116.81,145.81-163.57,330.63-119.17,437.88,5.84" transform="translate(1.1 -1.16)" style="fill: none;stroke: #fafcfc;stroke-miterlimit: 10;stroke-width: 2px"/>
+        <path class="fluid-6" data-name="fluid" d="M3.73,162.38c0-9.83,63.57-66,206,137.65,85.54,122.32,293.8,160.78,445.18-18.19,97.51-115.28,292.45-239.15,404.35-115.35,146,161.53,331.08,117.68,438.46-5.77" transform="translate(1.1 -1.16)" style="fill: none;stroke: #fafcfc;stroke-miterlimit: 10;stroke-width: 2px"/>
+        <path class="fluid-7" data-name="fluid" d="M3.73,596.82c0-11.72,63.49-78.73,205.73,164.17,85.43,145.89,293.4,191.76,444.58-21.7,97.38-137.5,292.06-285.23,403.81-137.58,145.81,192.65,330.63,140.36,437.88-6.88" transform="translate(1.1 -1.16)" style="fill: none;stroke: #fafcfc;stroke-miterlimit: 10;stroke-width: 2px"/>
+      </g>
+    </svg> -->
+
+
+
+    <!-- <svg class="beer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500.4 664">
+      <style type="text/css">
+         svg {
+          width: 500px;
+          height: auto; }
+         .bubble,
+         .bubble-3,
+         .bubble-8 {
+          animation: 3s ease-in infinite up; }
+         .bubble-2,
+         .bubble-4,
+         .bubble-5 {
+          animation: 2s ease-in infinite up;
+          transform: scale(2); }
+         .bubble-6,
+         .bubble-7 {
+          animation: 1s ease-in infinite up; }
+      
+      @keyframes fluid {
+        0% {
+          transform: translateX(500px); }
+        100% {
+          transform: translateX(-100px); } }
+      
+      @keyframes up {
+        0% {
+          opacity: 0;
+          transform: translateY(500px); }
+        100% {
+          opacity: 0.8;
+          transform: translateY(-300px); } }
+      
+      </style>
+      <title>beer</title>
+      <g class="foam">
+        <g>
+          <path d="M433.89,577.17A328.87,328.87,0,0,1,1.11,579.74v84.52h526A362.8,362.8,0,0,1,433.89,577.17Z" transform="translate(0.23 -0.26)" style="fill: #fff"/>
+          <path d="M918.81,664.26h29q-5.67-6.08-11.09-12.39Q928,658.33,918.81,664.26Z" transform="translate(0.23 -0.26)" style="fill: #fff"/>
+          <path d="M433.89,577.17a362.8,362.8,0,0,0,93.19,87.1H918.81q9.16-5.93,17.94-12.39,5.41,6.31,11.09,12.39h551.9V100.94a394.71,394.71,0,0,0-526.65.21,360.8,360.8,0,0,0-507.47,7.13h-7.37A328.88,328.88,0,0,0,1.11,81.81V579.74a328.87,328.87,0,0,0,432.78-2.57Z" transform="translate(0.23 -0.26)" style="fill: #fff"/>
+        </g>
+        <rect width="1500.04" height="342" style="fill: #fff"/>
+      </g>
+      <path class="fluid" d="M-.1,233.68c0,9.17,98.48,88.34,206.84-12.42,79.79-74.2,250.81-77.2,329.84,17,93.5,111.41,326.22,110.12,438.58-5.38,146.6-150.7,417.08-113.43,524.91,1.74.38.41-.33,429.67-.33,429.67L.08,664S-.1,187.12-.1,233.68Z" transform="translate(0.23 -0.26)" style="fill: #ffe91d"/>
+      <circle class="bubble" cx="118.19" cy="566.45" r="53.12" style="fill: #fff"/>
+      <circle class="bubble-2" data-name="bubble" cx="307.37" cy="420.87" r="92.4" style="fill: #fff"/>
+      <circle class="bubble-3" data-name="bubble" cx="892.36" cy="559.82" r="59.53" style="fill: #fff"/>
+      <circle class="bubble-4" data-name="bubble" cx="497.05" cy="568.58" r="31.8" style="fill: #fff"/>
+      <circle class="bubble-5" data-name="bubble" cx="1220.58" cy="383.07" r="70.64" style="fill: #fff"/>
+      <circle class="bubble-6" data-name="bubble" cx="1065.12" cy="478.45" r="39.31" style="fill: #fff"/>
+      <circle class="bubble-7" data-name="bubble" cx="1361.74" cy="568.37" r="44.08" style="fill: #fff"/>
+      <circle class="bubble-8" data-name="bubble" cx="643.42" cy="440.07" r="45.7" style="fill: #fff"/>
+    </svg> -->
+    
+
+    <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 679.73 781.43">
             <style type="text/css">
               svg {
                 width: 50px;
@@ -160,7 +317,8 @@
               <path class="yellow" data-name="yellow" d="M483.48,454.93c-8.48,0-9,54.34-9.25,57.59-2.49,27.27-13,54.91-23.67,80.3-20.52,49-50,97.49-22.17,151,43.89,84.2,174.9,70.71,198.7-22.1C647.52,642,577,611.86,538.68,559.1c-16.72-23-30.79-49.52-42.2-75.56-.47-1.08-6.61-28.61-13-28.61m26.39,68c.94,2,0-.1,0-.11S509.86,522.89,509.87,522.91Z" transform="translate(0 -18.36)" style="fill: #ff0"/>
             </g>
           </svg> -->
- </div>
- <script type="text/javascript" src="js/js08.js"></script>
+  </div>
+  <script type="text/javascript" src="js/js08.js"></script>
 </body>
+
 </html>
