@@ -5,3 +5,6 @@ node_modules
 .idea/*
 stuff/*
 /stuff/*
+
+letter-animation/node_modules
+/letter-animation/node_modules

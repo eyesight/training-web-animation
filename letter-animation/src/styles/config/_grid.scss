@@ -1,0 +1,52 @@
+
+$grid-24: (
+   columns: 24,
+   gutter: 0px,
+);
+
+$grid-22: (
+   columns: 23,
+   gutter: 0px,
+);
+
+$grid-12: (
+   columns: 12,
+   gutter: 0px,
+);
+
+//Variables for size in breakpoints
+$ipad-ls: 1023px;
+$ipad-p: 769px; 
+$screen-m: 1200px;
+$screen-ml: 1400px;
+$screen-l: 1600px;
+$screen-xl: 1920px;
+$screen-xxl: 2100px;
+$phone: 550px;
+
+$gutter: 20px;
+$col-count: 24;
+// example https: //codepen.io/mynimi/pen/rqLdZZ
+/*
+  Usage:
+  @include make-grid-item(col-span-item); // (on items)
+*/
+@mixin make-grid-item($item-col-spread, $cols-per-row:$col-count, $margin-side:$gutter, $margin-bottom:$margin-side) {
+   width: 100% / $cols-per-row * $item-col-spread;
+   margin-bottom: $margin-bottom;
+   padding-right: $margin-side / 2;
+   padding-left: $margin-side / 2;
+   box-sizing: border-box;
+ }
+ 
+ /*
+   Usage:
+   @include make-grid-container(); // (on container)
+ */
+ @mixin make-grid-container($grid-gutter: $gutter, $direction: row, $wrap: wrap, $justify-content: flex-start, $align-content: flex-start) {
+   margin-left: ($grid-gutter / 2)*-1;
+   margin-right: ($grid-gutter / 2)*-1;
+   @include flexbox($direction, $wrap, $justify-content, $align-content);
+ }
+
+ 
