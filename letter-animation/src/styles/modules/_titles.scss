@@ -10,12 +10,42 @@
     font-weight: 300;
     font-family: $font-family-secundary;
   }
-
+  &-h2-wrapper{
+    display: flex;
+    justify-content: center;
+  }
   &-h2{
     margin-bottom: 40px;
     font-size: $font-s-h2;
     text-align: center;
     line-height: 1.1;
+    display: inline-block;
+
+    span{
+      display: inline-block;
+      margin-bottom: 0;
+    }
+
+    &.isAnimationgOnHover{
+
+      &:hover{
+        span:nth-child(5n+1){
+          animation: floating 3s -1s linear infinite;
+        }
+        span:nth-child(5n+2){
+          animation: floating 4s -2s linear infinite;
+        }
+        span:nth-child(5n+3){
+          animation: floating 5s -1s linear infinite;
+        }
+        span:nth-child(5n+4){
+          animation: floating 3s -2s linear infinite;
+        }
+        span:nth-child(5n+5){
+          animation: floating 6s -1s linear infinite;
+        }
+      }
+    }
 
     @include bp(max, $phone){
       font-size: $font-s-h2-xs;
@@ -34,7 +64,45 @@
     font-family: $font-family-primary;
     font-weight: 600;
   }
+  span{
+    display: inline-block;
+  }
+  &.isAnimationgOnHover{
+    &:hover{
+      span:nth-child(5n+1){
+        animation: floating 3s -1s linear infinite;
+      }
+      span:nth-child(5n+2){
+        animation: floating 4s -2s linear infinite;
+      }
+      span:nth-child(5n+3){
+        animation: floating 5s -1s linear infinite;
+      }
+      span:nth-child(5n+4){
+        animation: floating 3s -2s linear infinite;
+      }
+      span:nth-child(5n+5){
+        animation: floating 6s -1s linear infinite;
+      }
+    }
+  }
 }
 
 
-
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  25%{
+    transform: translateY(3px);
+  }
+  50%{
+    transform: translateY(0px);
+  }
+  75%{
+    transform: translateY(-3px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

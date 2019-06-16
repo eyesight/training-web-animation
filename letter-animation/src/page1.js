@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import TitleH1 from './title-h1'; 
-import TitleH2 from './title-h2';
+import TitleH2spans from './title-h2spans';
 import Paragraph from './paragraph';
 import { Transition } from "react-transition-group";
-import { TweenMax } from "gsap/all";
+import { TweenMax, TimelineMax } from "gsap/all";
 import OnVisible, { setDefaultProps } from 'react-on-visible';
 
 const startState = { autoAlpha: 1, y: -500, position: "absolute" };
@@ -17,20 +17,29 @@ setDefaultProps({
 
 
 class Page1 extends Component {
+    
     constructor(props) {
         super(props);
         this.state = {
-            theclass1: ''
+            width: 0, 
+            height: 0,
+            actualElement: ''
           };
         this.myRef = React.createRef();
+        this.myRef2 = React.createRef();
+        this.myRef3 = React.createRef();
         this.handleScroll = this.handleScroll.bind(this);
+        this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     }
     componentDidMount() {   
         document.addEventListener('scroll', this.handleScroll);     
+        this.updateWindowDimensions();
+        window.addEventListener('resize', this.updateWindowDimensions);
     }
 
     componentWillUnmount() { 
         window.removeEventListener('scroll', this.handleScroll); 
+        window.removeEventListener('resize', this.updateWindowDimensions);
     }
    
     componentDidUpdate() {
@@ -38,28 +47,52 @@ class Page1 extends Component {
     componentWillUpdate() {
         
     }
+
+    updateWindowDimensions() {
+        this.setState({ width: window.innerWidth, height: window.innerHeight });
+      }
+
     updateVis(e) {
         console.log(e);
     }
     
-    handleScroll = (e)=>{
-        if(this.myRef.current){
-
-        
-        const scrollTop = this.myRef.current.getBoundingClientRect().top;
-        const scrollBottom = this.myRef.current.getBoundingClientRect().bottom;
-        const scrollHeight = this.myRef.current.getBoundingClientRect().height;
-
-/*         if (scrollHeight - scrollTop + 252 > 0 && scrollBottom > 0) {    */        
-        if (scrollTop + scrollHeight > 0 && scrollBottom > 0) {
-            this.setState({
-                theclass1: 'visible'
-            })
+    handleScroll = (e) => {
+        let allElements = [this.myRef.current, this.myRef2.current, this.myRef3.current];
+        if(allElements.length > 0){
+            allElements.forEach((elem)=>{
+                console.log(elem);
+            const scrollTop = elem.getBoundingClientRect().top;
+            const scrollBottom = elem.getBoundingClientRect().bottom;
+            const scrollHeight = elem.getBoundingClientRect().height;
+            const elPercent = (this.state.height/100*20);
+            const tl = new TimelineMax();
+            tl.add("stagger")
+            let allLetters = elem.querySelectorAll('span');
+                let all1 = [];
+                let all2 = [];
+                let all3 = [];
+                allLetters.forEach(function(item, i){
+                    if(i%3 === 0){
+                        all3.push(item);
+                    }else if(i%2 === 0){
+                        all2.push(item)
+                    }else{
+                        all1.push(item);
+                    }
+                });
+            if (scrollTop + scrollHeight > 0 && scrollBottom > 0 && scrollTop < elPercent) {
+              elem.classList.remove('isAnimationgOnHover');
+             let float = scrollTop-131;
+             tl.to(all1, 0.5, {transform: 'translateY('+ float +'px)'}, "stagger");
+             tl.to(all2, 1.5, {transform: 'translateY('+ float +'px)'}, "stagger");
+             tl.to(all3, 1, {transform: 'translateY('+ float +'px)'}, "stagger");
             }else{
-                this.setState({
-                    theclass1: 'notvisible'
-                })
+                TweenMax.to(all1, 0.5, {transform: 'translateY(0px)'});
+                TweenMax.to(all2, 1.5, {transform: 'translateY(0px)'});
+                TweenMax.to(all3, 1, {transform: 'translateY(0px)'});
+                elem.classList.add('isAnimationgOnHover');
             }
+            });
         }
     }
 
@@ -93,13 +126,13 @@ class Page1 extends Component {
                         console.log('onExited');
                     }}
                 >
-            <div className="content content-page1" onScroll={this.handleScroll}>
+            <div className="content content-page1" >
                     <section className='section-1' >
                         <TitleH1
                             ref={this.myRef}
                             txtBold='Title H1'
-                            txtReg='asdfasdf Lorem ipsum '
-                            theclass={`main-title ${this.state.theclass1}`}
+                            txtReg='asdfasdf Lorem ipsum'
+                            theclass={`main-title`}
                         />
                         <Paragraph
                             txt='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
@@ -107,17 +140,6 @@ class Page1 extends Component {
                             aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores 
                             et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum 
                             dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam 
-                            voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
-                            no sea takimata sanctus est Lorem ipsum dolor sit amet.'
-                        />
-                        <Paragraph
-                            txt='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
-                            sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 
-                            aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores 
-                            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum 
-                            dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam 
-                            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam 
-                            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam 
                             voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
                             no sea takimata sanctus est Lorem ipsum dolor sit amet.'
                         />
@@ -135,10 +157,14 @@ class Page1 extends Component {
                     </section>
                     <section className='section-1'>
                         <OnVisible onChange={this.updateVis.bind(this)} className="title-h2-wrapper">
-                            <TitleH2 
-                                txtBold='Title H2  here we go'
-                                txtReg='asdfasdf Lorem ipsum dolor sit amet, consetetur sadipscing elitr, '
+                        <div className="title-h2-wrapper">
+                            <TitleH2spans 
+                                ref={this.myRef2}
+                                txtBold='Title H2'
+                                txtReg='asdfasdf Lorem ipsum dolor sit amet'
+                                theclass={`title-h2`}
                             />
+                        </div>
                         </OnVisible>
                         <Paragraph
                             txt='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
@@ -151,25 +177,16 @@ class Page1 extends Component {
                             voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
                             no sea takimata sanctus est Lorem ipsum dolor sit amet.'
                         />
-                        <Paragraph
-                            txt='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
-                            sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 
-                            aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores 
-                            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum 
-                            dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam 
-                            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam 
-                            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam 
-                            voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
-                            no sea takimata sanctus est Lorem ipsum dolor sit amet.
-
-                            HERE WE END'
-                        />
                     </section>
                     <section className='section-1'>
-                        <TitleH2
-                            txtBold='Title H2  '
-                            txtReg='asdfasdf Lorem ipsum dolor sit amet, consetetur sadipscing elitr, '
-                        />
+                         <div className="title-h2-wrapper">
+                            <TitleH2spans
+                                ref={this.myRef3}
+                                txtBold='Title H2  '
+                                txtReg='Lorem ipsum dolor sit ametelitr'
+                                theclass={`title-h2`}
+                            />
+                        </div>
                         <Paragraph
                             txt='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
                             sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 
@@ -180,23 +197,6 @@ class Page1 extends Component {
                             nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam 
                             voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
                             no sea takimata sanctus est Lorem ipsum dolor sit amet.'
-                        />
-                        <Paragraph
-                            txt='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
-                            sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 
-                            aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores 
-                            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum 
-                            dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam 
-                            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam 
-                            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam 
-                            voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
-                            no sea takimata sanctus est Lorem ipsum dolor sit amet.'
-                        />
-                    </section>
-                    <section className='section-1'>
-                        <TitleH2
-                            txtBold='Title H2  '
-                            txtReg='asdfasdf Lorem ipsum dolor sit amet, consetetur sadipscing elitr, '
                         />
                         <Paragraph
                             txt='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
