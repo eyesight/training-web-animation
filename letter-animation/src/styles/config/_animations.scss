@@ -174,3 +174,9 @@
         transform: rotate(0deg);;
       }
   }
+
+  @keyframes fly-cycle {
+	  100% {
+	  	background-position: -360px 0; 
+	  } 
+	}

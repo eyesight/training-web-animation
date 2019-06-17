@@ -4,17 +4,9 @@ import TitleH2spans from './title-h2spans';
 import Paragraph from './paragraph';
 import { Transition } from "react-transition-group";
 import { TweenMax, TimelineMax } from "gsap/all";
-import OnVisible, { setDefaultProps } from 'react-on-visible';
+import { withRouter } from "react-router-dom";
 
 const startState = { autoAlpha: 1, y: -500, position: "absolute" };
-
-setDefaultProps({
-    bounce: true,
-    visibleClassName: 'appear',
-    percent: 80,
-    wrappingElement: 'span'
-});
-
 
 class Page1 extends Component {
     
@@ -35,32 +27,23 @@ class Page1 extends Component {
         document.addEventListener('scroll', this.handleScroll);     
         this.updateWindowDimensions();
         window.addEventListener('resize', this.updateWindowDimensions);
+        console.log('page1 mounting');
     }
 
     componentWillUnmount() { 
         window.removeEventListener('scroll', this.handleScroll); 
         window.removeEventListener('resize', this.updateWindowDimensions);
-    }
-   
-    componentDidUpdate() {
-    }
-    componentWillUpdate() {
-        
+        console.log('page1 unmounting');
     }
 
     updateWindowDimensions() {
         this.setState({ width: window.innerWidth, height: window.innerHeight });
       }
-
-    updateVis(e) {
-        console.log(e);
-    }
     
     handleScroll = (e) => {
         let allElements = [this.myRef.current, this.myRef2.current, this.myRef3.current];
-        if(allElements.length > 0){
+        if(allElements.length > 0 && this.myRef.current){
             allElements.forEach((elem)=>{
-                console.log(elem);
             const scrollTop = elem.getBoundingClientRect().top;
             const scrollBottom = elem.getBoundingClientRect().bottom;
             const scrollHeight = elem.getBoundingClientRect().height;
@@ -100,19 +83,18 @@ class Page1 extends Component {
         const { show } = this.props;
         return ( 
             <Transition
-                    appear
-                    unmountOnExit
+                    unmountOnExit={true}
                     in={show}
                     timeout={{
                         appear: 5000,
-                        enter: 0,
+                        enter: 5000,
                         exit: 5000,
                         }}
                     onEnter={node => {
-                        console.log('onEnter');
                         TweenMax.set(node, startState)}}
                     onEntering={(node)=>{
-                        console.log('onEntering');
+                    }}
+                    onExited={(node)=>{
                     }}
                     addEndListener={ (node, done) => {
                         TweenMax.to(node, 1, {
@@ -123,97 +105,94 @@ class Page1 extends Component {
                         });
                     }}
                     onExit={(node)=>{
-                        console.log('onExited');
                     }}
                 >
-            <div className="content content-page1" >
-                    <section className='section-1' >
-                        <TitleH1
-                            ref={this.myRef}
-                            txtBold='Title H1'
-                            txtReg='asdfasdf Lorem ipsum'
-                            theclass={`main-title`}
-                        />
-                        <Paragraph
-                            txt='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
-                            sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 
-                            aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores 
-                            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum 
-                            dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam 
-                            voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
-                            no sea takimata sanctus est Lorem ipsum dolor sit amet.'
-                        />
-                        <Paragraph
-                            txt='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
-                            sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 
-                            aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores 
-                            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum 
-                            dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam 
-                            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam 
-                            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam 
-                            voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
-                            no sea takimata sanctus est Lorem ipsum dolor sit amet.'
-                        />
-                    </section>
-                    <section className='section-1'>
-                        <OnVisible onChange={this.updateVis.bind(this)} className="title-h2-wrapper">
-                        <div className="title-h2-wrapper">
-                            <TitleH2spans 
-                                ref={this.myRef2}
-                                txtBold='Title H2'
-                                txtReg='asdfasdf Lorem ipsum dolor sit amet'
-                                theclass={`title-h2`}
+                <div className="content content-page1" >
+                        <section className='section-1' >
+                            <TitleH1
+                                ref={this.myRef}
+                                txtBold='Floating letters'
+                                txtReg='Flying away when scrolling'
+                                theclass={`main-title`}
                             />
-                        </div>
-                        </OnVisible>
-                        <Paragraph
-                            txt='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
-                            sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 
-                            aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores 
-                            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum 
-                            dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam 
-                            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam 
-                            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam 
-                            voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
-                            no sea takimata sanctus est Lorem ipsum dolor sit amet.'
-                        />
-                    </section>
-                    <section className='section-1'>
-                         <div className="title-h2-wrapper">
-                            <TitleH2spans
-                                ref={this.myRef3}
-                                txtBold='Title H2  '
-                                txtReg='Lorem ipsum dolor sit ametelitr'
-                                theclass={`title-h2`}
+                            <Paragraph
+                                txt='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+                                sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 
+                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores 
+                                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum 
+                                dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam 
+                                voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
+                                no sea takimata sanctus est Lorem ipsum dolor sit amet.'
                             />
-                        </div>
-                        <Paragraph
-                            txt='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
-                            sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 
-                            aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores 
-                            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum 
-                            dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam 
-                            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam 
-                            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam 
-                            voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
-                            no sea takimata sanctus est Lorem ipsum dolor sit amet.'
-                        />
-                        <Paragraph
-                            txt='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
-                            sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 
-                            aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores 
-                            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum 
-                            dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam 
-                            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam 
-                            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam 
-                            voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
-                            no sea takimata sanctus est Lorem ipsum dolor sit amet.'
-                        />
-                    </section>
-            </div>
-                </Transition>
+                            <Paragraph
+                                txt='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+                                sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 
+                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores 
+                                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum 
+                                dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam 
+                                nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam 
+                                nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam 
+                                voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
+                                no sea takimata sanctus est Lorem ipsum dolor sit amet.'
+                            />
+                        </section>
+                        <section className='section-1'>
+                            <div className="title-h2-wrapper">
+                                <TitleH2spans 
+                                    ref={this.myRef2}
+                                    txtBold='Title H2'
+                                    txtReg='asdfasdf Lorem ipsum dolor sit amet'
+                                    theclass={`title-h2`}
+                                />
+                            </div>
+                            <Paragraph
+                                txt='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+                                sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 
+                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores 
+                                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum 
+                                dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam 
+                                nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam 
+                                nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam 
+                                voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
+                                no sea takimata sanctus est Lorem ipsum dolor sit amet.'
+                            />
+                        </section>
+                        <section className='section-1'>
+                            <div className="title-h2-wrapper">
+                                <TitleH2spans
+                                    ref={this.myRef3}
+                                    txtBold='Title H2  '
+                                    txtReg='Lorem ipsum dolor sit ametelitr'
+                                    theclass={`title-h2`}
+                                />
+                            </div>
+                            <Paragraph
+                                txt='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+                                sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 
+                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores 
+                                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum 
+                                dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam 
+                                nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam 
+                                nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam 
+                                voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
+                                no sea takimata sanctus est Lorem ipsum dolor sit amet.'
+                            />
+                            <Paragraph
+                                txt='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+                                sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 
+                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores 
+                                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum 
+                                dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam 
+                                nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam 
+                                nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam 
+                                voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
+                                no sea takimata sanctus est Lorem ipsum dolor sit amet.'
+                            />
+                        </section>
+                </div>
+            </Transition>
         );
     }
 }
 
-export default Page1;
+export default withRouter(Page1);

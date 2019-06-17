@@ -13,8 +13,7 @@ class Header extends Component {
                 <div className="header__inner">
                     <ul className="navigation">
                         <li className="navigation__item"><NavLink activeClassName="active" className="anchor" exact to="/">Page 1</NavLink></li>                
-                        <li className="navigation__item"><NavLink activeClassName="active" className="anchor" to="/page2">Page 2</NavLink></li>
-                        <li className="navigation__item"><NavLink activeClassName="active" className="anchor" exact to="/page3">Page 3</NavLink></li>                
+                        <li className="navigation__item"><NavLink activeClassName="active" className="anchor" exact to="/page2">Page 2</NavLink></li>
                     </ul>
                 </div>
             </header>

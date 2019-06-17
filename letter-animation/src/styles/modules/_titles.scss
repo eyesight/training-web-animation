@@ -66,6 +66,24 @@
   }
   span{
     display: inline-block;
+    position: relative;
+    .bird{
+        background-image: url('/birds.svg');
+        opacity: 1;
+      display:block;
+      position: absolute;
+      background-size: auto 100%;
+      content: '';
+      width: $widthBird2;
+        height: $heightBird2;
+        top: 0;
+        left: 0;
+      animation-name: fly-cycle;
+      animation-timing-function: steps(3);
+      animation-iteration-count: infinite;
+      animation-duration: 1s;
+      animation-delay: -0.5s;		
+    }
   }
   &.isAnimationgOnHover{
     &:hover{
@@ -105,4 +123,10 @@
   100% {
     transform: translateY(0);
   }
+}
+
+@keyframes flycycle {
+  100% {
+    background-position: -360px 0; 
+  } 
 }
