@@ -2,6 +2,7 @@ html,
 body {
   height: 100%;
   margin: 0;
+  overflow-x: hidden;
 }
 body {
   font-family: $font-family-primary;
@@ -124,6 +125,10 @@ button, html input[type="button"], input[type="reset"], input[type="submit"]{
 .section-1{
   margin-top: 150px;
   margin-bottom: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .text{

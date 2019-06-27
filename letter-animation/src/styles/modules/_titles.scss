@@ -20,11 +20,37 @@
     text-align: center;
     line-height: 1.1;
     display: inline-block;
+    position: relative;
 
     span{
       display: inline-block;
+      position: relative;
       margin-bottom: 0;
+    
+    &.bird,
+    &.bird:after,
+    &.bird2{ 
+      background-image: url('/birds.svg');
+      opacity: 0;
+      display:block;
+      position: absolute;
+      background-size: auto 100%;
+      content: '';
+      width: $widthBird2;
+      height: $heightBird2;
+      top: 0;
+      left: 50%;
+      animation-name: fly-cycle;
+      animation-timing-function: steps(3);
+      animation-iteration-count: infinite;
+      animation-duration: 1s;
+      animation-delay: -0.5s;		
     }
+    
+    &.bird2{ 
+      left: 20%;
+    }
+  }
 
     &.isAnimationgOnHover{
 
@@ -67,22 +93,34 @@
   span{
     display: inline-block;
     position: relative;
-    .bird{
-        background-image: url('/birds.svg');
-        opacity: 1;
+    .bird,
+    &.bird2,
+    &.bird2b{
+      background-image: url('/birds.svg');
+      opacity: 0;
       display:block;
       position: absolute;
       background-size: auto 100%;
       content: '';
       width: $widthBird2;
-        height: $heightBird2;
-        top: 0;
-        left: 0;
+      height: $heightBird2;
+      top: 0;
+      left: 0;
       animation-name: fly-cycle;
       animation-timing-function: steps(3);
       animation-iteration-count: infinite;
       animation-duration: 1s;
       animation-delay: -0.5s;		
+    }
+    &.bird2,
+    &.bird2b{
+      opacity: 0;
+      top: 45px;
+      left: -10px;
+    }
+
+    &.word{
+      white-space: nowrap;
     }
   }
   &.isAnimationgOnHover{

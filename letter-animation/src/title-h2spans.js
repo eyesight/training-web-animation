@@ -4,7 +4,17 @@ const TitleH2spans = React.forwardRef((props, ref) => {
     let newArr2 = props.txtReg.split('');
     let newArr = props.txtBold.split('');
     return (
-        <h2 ref={ref} className={props.theclass}>{newArr.map((item, index)=> (item !== ' ') ? <span key={index.toString()}>{item}</span> : <span key={index.toString()}>&nbsp;</span>)}<br />{newArr2.map((item, index)=>(item !== ' ') ? <span className='title-h2 title--regular' key={index.toString()}>{item}</span> : <span className='title-h2 title--regular' key={index.toString()}>&nbsp;</span>)}</h2>
+        <h2 ref={ref} className={props.theclass}>
+            {newArr.map((item, index)=> (item !== ' ') ? 
+                <span key={index.toString()}>{item}</span> : 
+                <span key={index.toString()}>&nbsp;</span>)}
+                {props.hasBird ? <span className="bird"></span> : null}
+                {props.hasBird ? <span className="bird2"></span> : null} 
+                <br />
+                {newArr2.map((item, index)=>(item !== ' ') ? 
+                <span className='title-h2 title--regular' key={index.toString()}>{item}</span> : 
+                <span className='title-h2 title--regular' key={index.toString()}>&nbsp;</span>)}
+        </h2>
     );
 }); 
 export default TitleH2spans;
