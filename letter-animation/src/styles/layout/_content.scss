@@ -114,6 +114,10 @@ button, html input[type="button"], input[type="reset"], input[type="submit"]{
 
   + div{
     margin-top: 15%;
+
+    @include bp(max, $ipad-p){
+      margin-top: 30%;
+    }
   }
 }
 

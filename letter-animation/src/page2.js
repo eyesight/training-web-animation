@@ -2,11 +2,8 @@ import React, { Component } from 'react';
 import TitleH1bird from './title-h1bird'; 
 import TitleH2spans from './title-h2spans';
 import Paragraph from './paragraph';
-import { Transition } from "react-transition-group";
-import { TweenMax, TimelineMax } from "gsap/all";
+import { TimelineMax } from "gsap/all";
 import { withRouter } from "react-router-dom";
-
-const startState = { autoAlpha: 0, y: -500, position: "absolute" };
 
 class Page2 extends Component {
     constructor(props) {
@@ -31,11 +28,11 @@ class Page2 extends Component {
         document.addEventListener('scroll', this.handleScrollBird);     
         this.updateWindowDimensions();
         window.addEventListener('resize', this.updateWindowDimensions);
-        console.log('page2 mounting');
     }
 
     componentWillUnmount() { 
-        console.log('page2 unmounting');
+        window.removeEventListener('scroll', this.handleScrollBird); 
+        window.removeEventListener('resize', this.updateWindowDimensions);
     }
 
     updateWindowDimensions() {
@@ -56,14 +53,12 @@ class Page2 extends Component {
         
             let allWordsBold = theh1.querySelectorAll('.main-title span.word');
             theh2.forEach((item)=>{
-                console.log(item);
                 const scrollToph2 = item.getBoundingClientRect().top;
                 const scrollBottomh2 = item.getBoundingClientRect().bottom;
                 const scrollHeighth2 = item.getBoundingClientRect().height;
                 const bird = item.querySelector('.bird');
                 const bird2 = item.querySelector('.bird2');
-                console.log(bird);
-                    let animh2 = new TimelineMax();
+                let animh2 = new TimelineMax();
                 if (scrollToph2 + scrollHeighth2 > 0 && scrollBottomh2 > 0 && scrollToph2 > elPercenttitle2 && scrollToph2 < elPercenttitle2+20 && this.prev < window.scrollY) {
                     console.log('bird');
                     animh2.add("bird");
@@ -150,33 +145,8 @@ class Page2 extends Component {
      }
 
     render() {
-        const { show } = this.props;
         return (
-            <Transition
-                    unmountOnExit={true}
-                    in={show}
-                    timeout={{
-                        appear: 5000,
-                        enter: 5000,
-                        exit: 500,
-                        }}
-                    onEnter={node => {
-                        TweenMax.set(node, startState)}}
-                    onEntering={(node)=>{
-                    }}
-                    
-                    addEndListener={ (node, done) => {
-                        TweenMax.to(node, 1, {
-                            autoAlpha: show ? 1 : 0,
-                            y: show ? 0 : 500,
-                            position: show ? "relative" : "absolute",
-                            onComplete: done
-                        });
-                    }}
-                    onExit={(node)=>{
-                    }}
-                >
-                <div className="content content-page2">
+            <div className="content content-page2">
                 <section className='section-1'>
                         <TitleH1bird
                                 ref={this.h1Ref}
@@ -204,26 +174,18 @@ class Page2 extends Component {
                             voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
                             no sea takimata sanctus est Lorem ipsum dolor sit amet.'
                         />
-                        <Paragraph
-                            txt='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
-                            sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 
-                            aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores 
-                            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum 
-                            dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam 
-                            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam 
-                            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam 
-                            voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
-                            no sea takimata sanctus est Lorem ipsum dolor sit amet.'
-                        />
+                        
                     </section>
                     <section className='section-1'>
-                        <TitleH2spans
-                            txtBold='scroll me'
-                            txtReg='They float also on hover'
-                            hasBird={true}
-                            ref={this.h2Ref1}
-                            theclass={'title-h2'}
-                        />
+                        <div className="title-h2-wrapper">
+                            <TitleH2spans
+                                txtBold='Scroll me'
+                                txtReg='... and see the Birds fly away'
+                                hasBird={true}
+                                ref={this.h2Ref1}
+                                theclass={'title-h2'}
+                            />
+                        </div>
                         <Paragraph
                             txt='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
                             sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 
@@ -248,13 +210,15 @@ class Page2 extends Component {
                         />
                     </section>
                     <section className='section-1'>
-                        <TitleH2spans
-                            txtBold='Title H2  '
-                            txtReg='asdfasdf Lorem ipsum dolor sit amet, consetetur sadipscing elitr, '
-                            hasBird={true}
-                            ref={this.h2Ref2}
-                            theclass={'title-h2'}
-                        />
+                        <div className="title-h2-wrapper">
+                            <TitleH2spans
+                                txtBold='Scroll me'
+                                txtReg='But please not to fast'
+                                hasBird={true}
+                                ref={this.h2Ref2}
+                                theclass={'title-h2'}
+                            />
+                        </div>
                         <Paragraph
                             txt='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
                             sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 
@@ -278,8 +242,7 @@ class Page2 extends Component {
                             no sea takimata sanctus est Lorem ipsum dolor sit amet.'
                         />
                     </section>
-                </div>
-            </Transition>
+            </div>
         );
     }
 }

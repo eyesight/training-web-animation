@@ -12,12 +12,14 @@ class App extends Component {
         <Router>
           <Header />
           <div className="content-wrapper">
+            <Switch>
               <Route path="/" exact>
                   { ({ match }) => <Page1 show={match !== null} /> }
               </Route>
               <Route path="/page2" exact>
                   { ({ match }) => <Page2 show={match !== null} /> }
               </Route>
+            </Switch>
           </div>
         </Router>
       </div>

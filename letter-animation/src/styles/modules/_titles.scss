@@ -13,6 +13,7 @@
   &-h2-wrapper{
     display: flex;
     justify-content: center;
+    animation: startani 0.3s linear 1s backwards;
   }
   &-h2{
     margin-bottom: 40px;
@@ -86,10 +87,16 @@
   line-height: 5rem;
   margin-bottom: 100px;
   text-align: center;
+  animation: startani 0.3s linear 1s backwards;
   &--bold{
     font-family: $font-family-primary;
     font-weight: 600;
   }
+  @include bp(max, $ipad-p){
+      font-size: $font-s-main-s;
+      line-height: 3rem;
+      margin-bottom: 70px;
+    }
   span{
     display: inline-block;
     position: relative;
