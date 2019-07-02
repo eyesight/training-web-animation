@@ -41,7 +41,7 @@
       height: $heightBird2;
       top: 0;
       left: 50%;
-      animation-name: fly-cycle;
+      animation-name: flycycle;
       animation-timing-function: steps(3);
       animation-iteration-count: infinite;
       animation-duration: 1s;
@@ -113,7 +113,7 @@
       height: $heightBird2;
       top: 0;
       left: 0;
-      animation-name: fly-cycle;
+      animation-name: flycycle;
       animation-timing-function: steps(3);
       animation-iteration-count: infinite;
       animation-duration: 1s;
