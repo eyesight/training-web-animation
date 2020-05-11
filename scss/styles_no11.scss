@@ -1,0 +1,22 @@
+$no11color: #bbbbbb;
+$no11color2: #003577;
+$no11color3: #E4E5E6;
+
+body.no11{
+	height: 100vh;
+	font-family: 'Delius Swash Caps', cursive;
+
+	text-align: center;
+	color: $no11color2;
+	background: $no11color3;
+	display: flex;
+  	align-items: center;
+  	justify-content: center;
+  	overflow: hidden; 
+}
+.wrapper-no11{
+	#canvas {
+		width: 800px;
+		height: 400px;
+	}
+}

@@ -1,0 +1,44 @@
+.logo-anim {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+
+	svg {
+		width: 50%;
+		min-width: 300px;
+		max-width: 500px;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		position: absolute;
+		overflow: visible;
+	}
+
+	.letter,
+	.ha,
+	.ho,
+	.ne,
+	.icon-print,
+	.icon-book,
+	.icon-web,
+	.claim,
+	.plus-one {
+		opacity: 0;
+	}
+
+	.plus-two,
+	.plus-one {
+		transform-origin: center center;
+	}
+
+	&.bg {
+		background: linear-gradient(0deg,  #000000, #b7003c, #ffffff, #ffffff);
+		background-size: 500% 500%;
+		animation: 1.5s bg ease forwards;
+	}
+}
+
+@keyframes bg { 
+    0%{background-position:50% 0%}
+    100%{background-position:50% 100%}
+}

@@ -1,0 +1,14 @@
+body.no11 {
+  height: 100vh;
+  font-family: 'Delius Swash Caps', cursive;
+  text-align: center;
+  color: #003577;
+  background: #E4E5E6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; }
+
+.wrapper-no11 #canvas {
+  width: 800px;
+  height: 400px; }
