@@ -50,282 +50,215 @@ var logoAnimation = (function() {
         translateX: 0,
         duration: 400,
         easing: 'easeOutCirc'
-      }, '2600')
+      }, '3000')
 
       //print bouncing
       .add({
         targets: '.icon-print',
         opacity: '1',
-        duration: 300,
-        easing: 'easeInCirc'
+        duration: 400,
+        easing: 'linear'
       }, '1301')
       .add({
         targets: '.icon-print',
         translateY: '-30',
-        scaleY: '1.5',
-        duration: 100,
-        easing: 'easeInCirc'
-    }, '1400')
-    .add({
-        targets: '.icon-print',
-        translateY: '5',
-        scaleY: '0.5',
-        duration: 50,
-        easing: 'easeInCirc'
-      }, '1510')
-      .add({
-        targets: '.icon-print',
-        translateY: '-30',
-        scaleY: '1.5',
-        duration: 100,
-        easing: 'easeInCirc'
-      }, '1500')
+        scaleY: '1.3',
+        duration: 400,
+        easing: 'easeOutQuart'
+      }, '1350')
       .add({
         targets: '.icon-print',
         translateY: '5',
-        scaleY: '1',
+        scaleY: '0.9',
         duration: 100,
-        easing: 'easeInCirc'
-      }, '1600')
-      .add({
-        targets: '.icon-print',
-        translateY: '-20',
-        duration: 50,
-        easing: 'easeInCirc'
-      }, '1700')
+        easing: 'easeInOutCubic'
+      }, '1750')
       .add({
         targets: '.icon-print',
         translateY: '0',
-        duration: 50,
-        easing: 'easeInCirc'
-      }, '1750')
+        scaleY: '1',
+        duration: 100,
+        easing: 'easeInOutCubic'
+      }, '1850')
       
       //book bouncing
       .add({
         targets: '.icon-book',
         opacity: '1',
-        duration: 300,
-        easing: 'easeInCirc'
+        duration: 400,
+        easing: 'linear'
       }, '1401')
       .add({
         targets: '.icon-book',
-        translateY: '-30',
-        scaleY: '1.8',
-        duration: 100,
-        easing: 'easeInCirc'
-      }, '1500')
-      .add({
-        targets: '.icon-book',
-        translateY: '0',
-        scaleY: '0.5',
-        duration: 50,
-        easing: 'easeInCirc'
-      }, '1610')
-      .add({
-        targets: '.icon-book',
-        translateY: '-20',
+        translateY: '-40',
         scaleY: '1.5',
+        duration: 400,
+        easing: 'easeOutQuart'
+      }, '1450')
+      .add({
+        targets: '.icon-book',
+        translateY: '2',
+        scaleY: '0.9',
         duration: 100,
-        easing: 'easeInCirc'
-      }, '1600')
-      .add({
-        targets: '.icon-book',
-        translateY: '5',
-        scaleY: '1',
-        duration: 100,
-        easing: 'easeInCirc'
-      }, '1700')
-      .add({
-        targets: '.icon-book',
-        translateY: '-10',
-        scaleY: '1.5',
-        duration: 50,
-        easing: 'easeInCirc'
-      }, '1800')
-      .add({
-        targets: '.icon-book',
-        translateY: '0',
-        scaleY: '1',
-        duration: 50,
-        easing: 'easeInCirc'
+        easing: 'easeInOutCubic'
       }, '1850')
+      .add({
+        targets: '.icon-book',
+        translateY: '-5',
+        scaleY: '1',
+        duration: 100,
+        easing: 'easeInOutCubic'
+      }, '1950')
+      .add({
+        targets: '.icon-book',
+        translateY: '0',
+        duration: 100,
+        easing: 'easeInOutCubic'
+      }, '2050')
 
       //web bouncing
       .add({
         targets: '.icon-web',
         opacity: '1',
-        duration: 300,
-        easing: 'easeInCirc'
+        duration: 400,
+        easing: 'linear'
       }, '1501')
       .add({
         targets: '.icon-web',
         translateY: '-40',
         scaleY: '1.9',
-        duration: 100,
-        easing: 'easeInCirc'
-      }, '1600')
-      .add({
-        targets: '.icon-web',
-        translateY: '5',
-        scaleY: '0.5',
-        duration: 50,
-        easing: 'easeInCirc'
-      }, '1710')
-      .add({
-        targets: '.icon-web',
-        translateY: '-20',
-        scaleY: '1.5',
-        duration: 100,
-        easing: 'easeInCirc'
-      }, '1700')
+        duration: 400,
+        easing: 'easeOutQuart'
+      }, '1550')
       .add({
         targets: '.icon-web',
         translateY: '5',
         scaleY: '1',
         duration: 100,
-        easing: 'easeInCirc'
-      }, '1800')
+        easing: 'easeInOutCubic'
+      }, '1950')
       .add({
         targets: '.icon-web',
-        translateY: '-10',
-        scaleY: '1.2',
-        duration: 50,
-        easing: 'easeInCirc'
-      }, '1900')
+        translateY: '-20',
+        scaleY: '1.1',
+        duration: 100,
+        easing: 'easeInOutCubic'
+      }, '2050')
       .add({
         targets: '.icon-web',
         translateY: '0',
         scaleY: '1',
-        duration: 50,
-        easing: 'easeInCirc'
-      }, '1950')
+        duration: 100,
+        easing: 'easeInOutCubic'
+      }, '2150')
 
-      //bouncing line
-
+      //fade-in letters
       .add({
         targets: '.logo .letter',
         opacity: '1',
-        delay: anime.stagger(50)
+        delay: anime.stagger(40)
       }, 2000)
 
       //icon print pops out
       .add({
         targets: '.icon-print',
-        translateY: ['-30', '10'],
-        duration: 300
-      }, 2500)
+        translateY: ['-30', '30'],
+        duration: 500
+      }, 2900)
 
       .add({
         targets: '.icon-print',
         opacity: '0',
         duration: 100
-      }, 2700)
+      }, 3300)
 
       .add({
         targets: '.ne',
         opacity: '1',
-        duration: 100
-      }, 2700)
+        duration: 300
+      }, 3300)
 
       .add({
         targets: '.ne',
-        translateY: ['20', '-10'],
-        duration: 100
-      }, 2800)
-
-      .add({
-        targets: '.ne',
-        translateY: 0,
-        duration: 50
-      }, 2850)
+        translateY: ['20', '0'],
+        duration: 500,
+        easing: 'easeOutQuart'
+      }, 3450)
 
       //icon book pops out
       .add({
         targets: '.icon-book',
         translateY: ['-30', '10'],
-        duration: 300
-      }, 2600)
+        duration: 500
+      }, 3000)
 
       .add({
         targets: '.icon-book',
         opacity: '0',
         duration: 100
-      }, 2800)
-
+      }, 3400)
       .add({
         targets: '.ha',
         opacity: '1',
-        duration: 100
-      }, 2800)
-
+        duration: 300,
+        easing: 'easeInOutCubic'
+      }, 3400)
       .add({
         targets: '.ha',
-        translateY: ['20', '-10'],
-        duration: 100
-      }, 2900)
-
-      .add({
-        targets: '.ha',
-        translateY: 0,
-        duration: 50
-      }, 2950)
-
+        translateY: ['20', '0'],
+        duration: 500,
+        easing: 'easeOutQuart'
+      }, 3550)
       .add({
         targets: '.icon-web',
         translateY: ['-30', '10'],
         duration: 300
-      }, 2700)
+      }, 3100)
 
       .add({
         targets: '.icon-web',
         opacity: '0',
         duration: 100
-      }, 2900)
-
+      }, 3300)
       .add({
         targets: '.ho',
         opacity: '1',
-        duration: 100
-      }, 2900)
-
+        duration: 300
+      }, 3300)
       .add({
         targets: '.ho',
-        translateY: ['20', '-10'],
-        duration: 100
-      }, 3000)
-
-      .add({
-        targets: '.ho',
-        translateY: 0,
-        duration: 50,
+        translateY: ['20', '0'],
+        duration: 500,
+        easing: 'easeOutQuart',
         complete: function() {
           addClass();
         }
-      }, 3050)
-
+      }, 3550)
       .add({
         targets: '.claim',
         opacity: 1,
         duration: 200
-      }, 3100)
+      }, 3600)
 
       //change color to white
       .add({
         targets: ['.letter', '.plus-one', '.plus-two', '.ho path', '.ne path', '.ha path', '.claim path'],
         fill: '#ffffff',
         duration: 400
-      }, 3200)
-
+      }, 4800)
       .add({
         targets: '.logo-anim__svg',
         top: '10px',
         left: '20px',
         translateY: ['-50%', '-25%'],
         translateX: ['-50%', '-25%'],
-        duration: 300,
+        duration: 400,
         scale: '0.5',
-        easing: 'linear'
-      }, 3400)
+        easing: 'linear',
+        complete: function() {
+          addClass();
+        }
+      }, 4500)
       
       return logoAnimationTL;
 	
@@ -338,11 +271,13 @@ function addClass() {
   }
 }
 
-window.addEventListener('load', () => {
+logoAnimation.play();
+
+/* window.addEventListener('load', () => {
   if (sessionStorage.getItem("bgIsSet")) {
     return;
   } else {
     logoAnimation.play();
     sessionStorage.setItem("bgIsSet", true);
   }
-});
+}); */

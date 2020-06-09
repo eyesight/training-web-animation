@@ -34,7 +34,7 @@
 	&.bg {
 		background: linear-gradient(0deg,  #000000, #b7003c, #ffffff, #ffffff);
 		background-size: 500% 500%;
-		animation: 1.5s bg ease forwards;
+		animation: 1.5s bg 0.5s ease forwards;
 	}
 }
 
