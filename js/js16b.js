@@ -22,6 +22,7 @@ class App {
 		window.addEventListener('resize', this.resize.bind(this));
 		this.canvas.addEventListener("mousemove", this.setMousePosition.bind(this), false);
 		this.canvas.addEventListener("mouseout", this.mouseLeave.bind(this), false);
+		this.canvas.addEventListener("mouseenter", this.mouseEnter.bind(this), false);
 		this.canvas.addEventListener("click", this.handleClickEvent.bind(this), false)
 		this.moveBall();
 		this.resize();
@@ -41,8 +42,15 @@ class App {
 		this.mouseposition.mouseY = e.clientY - canvasPos.y;
 	}
 
-	mouseLeave(e) {
-		console.log('hello');
+	mouseLeave() {
+		this.bg = 'transparent';
+	}
+
+	mouseEnter() {
+		this.bg = this.bgColors[0];
+		if (this.colorObject.next) {
+			this.bg = this.colorObject.next;
+		}
 	}
 
 	getPosition(el) {
