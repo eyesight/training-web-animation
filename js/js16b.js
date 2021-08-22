@@ -5,7 +5,7 @@ class App {
 		this.ctx = this.canvas.getContext('2d');
 
 		this.circleRadius = 30;
-		this.bgColors = ["#FF6138", "#FFBE53", "#2980B9", "#282741"];
+		this.bgColors = ["#353D40", "#D9D9D9", "#A1A5A6", "#F2B138", "#003F63"];
 		this.colorObject = {};
 		this.bg = this.bgColors[0];
 		this.colorIndex = 0;
